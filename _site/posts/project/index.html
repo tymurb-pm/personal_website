@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Blog</title>
+    <link rel="stylesheet" href="/styles/output.css">
+    <style>
+        /* Enhanced Typography & Readability */
+        :root {
+            --text-primary: #333;
+            --text-secondary: #555;
+            --text-muted: #6b7280;
+            --background-primary: #fff;
+            --background-secondary: #f9f9f9;
+            --accent-color: #1a73e8;
+            --border-color: #e5e7eb;
+            --code-background: #f5f7fa;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--background-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        main {
+            width: 100%;
+            max-width: 900px;
+            margin: 16px auto;
+            padding: 16px;
+            background: var(--background-primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        
+        @media (min-width: 640px) {
+            main {
+                margin: 32px auto;
+                padding: 32px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            main {
+                margin: 48px auto;
+                padding: 48px;
+            }
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        @media (min-width: 640px) {
+            h1 {
+                font-size: 2.2rem;
+                margin-bottom: 20px;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+                margin-top: 40px;
+                margin-bottom: 14px;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+                margin-top: 28px;
+            }
+            
+            p {
+                font-size: 1.05rem;
+                margin-bottom: 22px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.6rem;
+                margin-bottom: 24px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+                margin-top: 48px;
+                margin-bottom: 16px;
+            }
+            
+            h3 {
+                font-size: 1.4rem;
+                margin-top: 32px;
+                margin-bottom: 12px;
+            }
+            
+            p {
+                font-size: 1.15rem;
+                margin-bottom: 24px;
+            }
+        }
+
+        /* Links */
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Quotes */
+        blockquote {
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 24px 0;
+            background: var(--background-secondary);
+            border-radius: 0 4px 4px 0;
+        }
+
+        blockquote p {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+        
+        @media (min-width: 640px) {
+            blockquote {
+                padding: 16px 24px;
+                margin: 32px 0;
+            }
+        }
+
+        /* Code styling */
+        pre {
+            background: var(--code-background);
+            padding: 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        code {
+            background: var(--code-background);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Menlo', 'Monaco', 'Consolas', monospace;
+            font-size: 0.85em;
+        }
+        
+        @media (min-width: 640px) {
+            pre {
+                padding: 20px;
+                font-size: 0.95rem;
+                margin: 24px 0;
+            }
+            
+            code {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Lists styling */
+        ul, ol {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        @media (min-width: 640px) {
+            ul, ol {
+                margin: 24px 0;
+                padding-left: 24px;
+            }
+            
+            li {
+                margin-bottom: 12px;
+                font-size: 1.05rem;
+                line-height: 1.7;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            li {
+                font-size: 1.15rem;
+            }
+        }
+
+        /* Meta information */
+        .meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        @media (min-width: 640px) {
+            .meta {
+                font-size: 0.95rem;
+                margin-bottom: 28px;
+                gap: 16px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .meta {
+                font-size: 1rem;
+                margin-bottom: 32px;
+            }
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 0;
+        }
+        
+        @media (min-width: 640px) {
+            .back-link {
+                margin-bottom: 28px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .back-link {
+                margin-bottom: 32px;
+                font-size: 1.05rem;
+            }
+        }
+
+        /* Examples and callouts */
+        .example {
+            background: #f8f9ff;
+            border-left: 4px solid #d1d5db;
+            padding: 12px 16px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            font-style: italic;
+        }
+        
+        @media (min-width: 640px) {
+            .example {
+                padding: 16px 24px;
+                margin: 24px 0;
+            }
+        }
+
+        /* Section styling */
+        .section {
+            margin-bottom: 36px;
+        }
+        
+        @media (min-width: 768px) {
+            .section {
+                margin-bottom: 48px;
+            }
+        }
+
+        /* Feature lists */
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            background: #f9f9fb;
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        .feature-list .icon {
+            margin-right: 12px;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        
+        @media (min-width: 640px) {
+            .feature-list li {
+                margin-bottom: 16px;
+                padding: 16px;
+                align-items: center;
+            }
+            
+            .feature-list .icon {
+                margin-right: 16px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Tags */
+        .tags {
+            margin-top: 36px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            display: inline-block; 
+            background: #f3f4f6; 
+            padding: 6px 12px; 
+            border-radius: 20px; 
+            font-size: 0.9rem; 
+            color: #374151;
+            margin-bottom: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .tags {
+                margin-top: 48px;
+            }
+        }
+        
+        /* Handle images responsively */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 24px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-white shadow-md">
+    <nav class="max-w-4xl mx-auto flex justify-between items-center p-4">
+        <a href="/" class="text-xl font-bold text-gray-800">Tymur Buiadzhi</a>
+        <div class="space-x-4">
+            <a href="/" class="text-gray-600 hover:text-gray-900">Home</a>
+            <a href="/blog/" class="text-gray-600 hover:text-gray-900">Blog</a>
+            <a href="/cv/" class="text-gray-600 hover:text-gray-900">CV</a>
+            <a href="/contact/" class="text-gray-600 hover:text-gray-900">Contact</a>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        <a href="/blog" class="back-link">&larr; Back to Blog</a>
+        
+        <h1>Projects</h1>
+        <div class="meta">
+            <span>March 09, 2025</span>
+            <span>•</span>
+            <span>17 min read</span>
+        </div>
+
+        <article class="prose">
+            <h2><strong>📌 Introduction</strong></h2>
+<p>In the world of <strong>Project Management</strong>, it is essential to distinguish between <strong>projects</strong> and <strong>operations</strong>. While both contribute to organizational success, they serve distinct purposes and follow different management approaches.</p>
+<p>This article explores the fundamental differences between projects and operations, highlighting their characteristics, objectives, and management techniques.</p>
+<hr>
+<h2><strong>📖 Definition of Projects and Operations</strong></h2>
+<h3>🛠 <strong>What is a Project?</strong></h3>
+<p>A <strong>project</strong> is a <strong>temporary endeavor</strong> undertaken to create a <strong>unique product, service, or result</strong>. It has:</p>
+<ul>
+<li>A <strong>defined beginning and end</strong> 📅</li>
+<li>Specific <strong>objectives</strong> 🎯</li>
+<li>A <strong>budget</strong> 💰</li>
+<li><strong>Resources and constraints</strong> ⚙️</li>
+</ul>
+<p>Example: <em>Developing a new mobile app, constructing a building, or launching a marketing campaign.</em></p>
+<h3>🔄 <strong>What are Operations?</strong></h3>
+<p>Operations refer to <strong>ongoing, repetitive activities</strong> that ensure the continuous functioning of a business. They focus on:</p>
+<ul>
+<li><strong>Sustaining business functions</strong> 🏢</li>
+<li><strong>Efficiency and process optimization</strong> ⚡</li>
+<li><strong>Minimizing costs</strong> 💸</li>
+<li><strong>Standard procedures</strong> 📋</li>
+</ul>
+<p>Example: <em>Manufacturing goods, processing payroll, or providing customer support.</em></p>
+<hr>
+<h2><strong>📊 Key Differences Between Projects and Operations</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Projects 🏗</th>
+<th>Operations 🔄</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nature</strong></td>
+<td>Temporary</td>
+<td>Ongoing</td>
+</tr>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Create a unique output</td>
+<td>Maintain business continuity</td>
+</tr>
+<tr>
+<td><strong>Duration</strong></td>
+<td>Has a defined start and end</td>
+<td>Continuous with no end date</td>
+</tr>
+<tr>
+<td><strong>Management Approach</strong></td>
+<td>Uses project management methodologies</td>
+<td>Uses process management methodologies</td>
+</tr>
+<tr>
+<td><strong>Resources</strong></td>
+<td>Temporary allocation</td>
+<td>Permanent allocation</td>
+</tr>
+<tr>
+<td><strong>Risk Level</strong></td>
+<td>Higher due to uncertainty</td>
+<td>Lower due to standardization</td>
+</tr>
+<tr>
+<td><strong>Change Management</strong></td>
+<td>Frequent changes</td>
+<td>Minimal changes</td>
+</tr>
+<tr>
+<td><strong>Examples</strong></td>
+<td>Software development, event planning</td>
+<td>IT support, HR services</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2><strong>🔍 Similarities Between Projects and Operations</strong></h2>
+<p>Despite their differences, projects and operations share some similarities:</p>
+<p>✔ <strong>Both require planning, execution, and monitoring</strong> 📊
+✔ <strong>Both utilize resources like time, budget, and personnel</strong> ⏳💰👥
+✔ <strong>Both contribute to organizational goals and strategy</strong> 🎯
+✔ <strong>Both require risk management and quality control</strong> ⚠️✅</p>
+<hr>
+<h2><strong>📈 How Project Management and Operations Management Interact</strong></h2>
+<ul>
+<li><strong>Operations support projects</strong> by providing necessary resources.</li>
+<li><strong>Projects improve operations</strong> through innovation and process enhancement.</li>
+<li><strong>Operations can become projects</strong> when significant changes are required (e.g., system upgrades, process automation).</li>
+</ul>
+<blockquote>
+<p>&quot;A well-managed project can lead to operational efficiency, and efficient operations can create opportunities for new projects.&quot;</p>
+</blockquote>
+<hr>
+<h2><strong>📌 Conclusion</strong></h2>
+<p>Understanding the differences between <strong>projects</strong> and <strong>operations</strong> is crucial for effective <strong>project management</strong>. While projects focus on <strong>innovation and change</strong>, operations ensure <strong>stability and efficiency</strong>. Organizations must balance both to remain competitive and sustainable.</p>
+<p>💡 <strong>Key Takeaway</strong>: Projects bring transformation, and operations maintain consistency. Mastering both ensures business success! 🚀</p>
+<hr>
+<h2><strong>📚 Further Reading</strong></h2>
+<ul>
+<li>📖 <em>PMBOK Guide – Project Management Institute (PMI)</em></li>
+<li>📘 <em>The Lean Startup – Eric Ries</em></li>
+<li>📰 <em>Agile vs Waterfall: Choosing the Right Approach</em></li>
+</ul>
+<hr>
+<h2><strong>🔗 References</strong></h2>
+<ol>
+<li>Project Management Institute. (PMI). <em>A Guide to the Project Management Body of Knowledge (PMBOK® Guide)</em>.</li>
+<li>Kerzner, H. (2017). <em>Project Management: A Systems Approach to Planning, Scheduling, and Controlling</em>.</li>
+</ol>
+<hr>
+<p><em>📢 Do you manage projects or operations? Share your experience in the comments!</em> 💬</p>
+
+        </article>
+        
+        
+        <div class="tags">
+            
+            <a href="/tags/Personal" class="tag">Personal</a>
+            
+        </div>
+        
+    </main>
+
+    <script>
+        // Add icon classes to features list items - runs after content is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Process features lists - assumes the content includes such lists with specific classes
+            const featureLists = document.querySelectorAll('.feature-list');
+            featureLists.forEach(list => {
+                const items = list.querySelectorAll('li');
+                items.forEach(item => {
+                    // If there's an emoji at the start, wrap it in a span
+                    const text = item.innerHTML;
+                    if (text.match(/^(\p{Emoji}|\p{Emoji_Presentation})/u)) {
+                        item.innerHTML = text.replace(/^(\p{Emoji}|\p{Emoji_Presentation})/u, '<span class="icon">$&</span>');
+                    }
+                });
+            });
+
+            // Format examples
+            const examples = document.querySelectorAll('p:contains("Example:")');
+            examples.forEach(example => {
+                example.classList.add('example');
+            });
+        });
+    </script>
+</body>
+</html>
