@@ -22,7 +22,7 @@ permalink: "/blog{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1
             <div class="flex space-x-2 min-w-max">
                 <button class="category-filter active bg-blue-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" data-category="all">All</button>
                 <button class="category-filter bg-green-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" data-category="Project Management">Project Management</button>
-                <button class="category-filter bg-yellow-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" data-category="Tech">Tech</button>
+            <!-- <button class="category-filter bg-yellow-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" data-category="Tech">Tech</button> -->
                 <button class="category-filter bg-red-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" data-category="Personal">Personal</button>
             </div>
         </div>
@@ -42,7 +42,7 @@ permalink: "/blog{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1
 
             <p class="text-gray-500 text-xs sm:text-sm mt-1">
                 {{ post.date | date }} • 
-                {{ (post.templateContent | striptags | length / 200) | round }} min read
+                {{ (post.templateContent | striptags | length / 1150) | round }} min read
             </p>
 
             <p class="text-gray-700 text-sm sm:text-base mt-2">

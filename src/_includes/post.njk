@@ -12,7 +12,7 @@
             --text-secondary: #555;
             --text-muted: #6b7280;
             --background-primary: #fff;
-            --background-secondary: #f9f9f9;
+            --background-secondary: #F9F9F9;
             --accent-color: #1a73e8;
             --border-color: #e5e7eb;
             --code-background: #f5f7fa;
@@ -377,21 +377,21 @@
         <div class="meta">
             <span>{{ date | date }}</span>
             <span>•</span>
-            <span>{{ (content | striptags | length / 200) | round }} min read</span>
+            <span>{{ (content | striptags | length / 1150) | round }} min read</span>
         </div>
 
         <article class="prose">
             {{ content | safe }}
         </article>
         
-        {% if tags %}
-        <div class="tags">
-            {% for tag in tags %}
-            <a href="/tags/{{ tag }}" class="tag">{{ tag }}</a>
+  <!-- {% if tags %}
+     <div class="tags">
+           {% for tag in tags %}
+           <a href="/tags/{{ tag }}" class="tag">{{ tag }}</a>
             {% endfor %}
         </div>
         {% endif %}
-    </main>
+    </main> -->
 
     <script>
         // Add icon classes to features list items - runs after content is loaded
