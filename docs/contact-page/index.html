@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/styles/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-white shadow-md">
+  <nav class="max-w-4xl mx-auto flex justify-between items-center p-4">
+    <a href="/" class="text-xl font-bold text-gray-800">Tymur Buiadzhi</a>
+    <!-- Hamburger Button: Visible on mobile -->
+    <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+      <!-- Simple icon (could be replaced with an SVG) -->
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+    <!-- Navigation Links: Hidden on mobile -->
+    <div id="mobile-menu" class="hidden md:flex space-x-4">
+      <a href="/" class="text-gray-600 hover:text-gray-900">Home</a>
+      <a href="/blog/" class="text-gray-600 hover:text-gray-900">Blog</a>
+      <a href="/cv/" class="text-gray-600 hover:text-gray-900">CV</a>
+      <a href="/contact-page/" class="text-gray-600 hover:text-gray-900">Contact</a>
+    </div>
+  </nav>
+  <!-- Mobile Menu: Visible when toggled -->
+  <div id="mobile-menu-dropdown" class="hidden md:hidden bg-white shadow-md">
+    <a href="/" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Home</a>
+    <a href="/blog/" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Blog</a>
+    <a href="/cv/" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">CV</a>
+    <a href="/contact-page/" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contact</a>
+  </div>
+</header>
+
+
+<main class="max-w-4xl mx-auto p-4 sm:p-6">
+    
+
+
+<section class="contact-section bg-white p-8 rounded-lg shadow-lg max-w-xl mx-auto">
+    <h1 class="text-2xl font-bold text-center">Contact Me</h1>
+    <p class="text-center text-gray-600 mb-4">Feel free to reach out. I’ll get back to you as soon as possible.</p>
+    
+    <form id="contact-form" class="space-y-4">
+      <input type="hidden" name="_captcha" value="false">
+     <input type="hidden" name="_subject" value="New Contact Form Submission">
+
+    <!-- Name and Email Fields -->
+    <div class="flex flex-col sm:flex-row sm:gap-6 space-y-3 sm:space-y-0">
+      <input type="text" name="name" placeholder="Your Name" 
+         class="w-full sm:w-1/2 border rounded-lg py-3 px-4 border-gray-400 focus:border-blue-500 outline-none transition-all" required>
+     <input type="email" name="email" placeholder="Your Email" 
+         class="w-full sm:w-1/2 border rounded-lg py-3 px-4 border-gray-400 focus:border-blue-500 outline-none transition-all" required>
+    </div>
+
+
+     <!-- Subject Field -->
+     <input type="text" name="subject" placeholder="Subject" 
+         class="w-full border rounded-lg py-3 px-4 border-gray-400 focus:border-blue-500 outline-none transition-all" required>
+
+     <!-- Message Field -->
+     <textarea name="message" placeholder="Your Message" 
+         class="w-full border rounded-lg py-3 px-4 border-gray-400 focus:border-blue-500 outline-none transition-all min-h-[120px]" required></textarea>
+
+     <!-- Submit Button -->
+      <button type="submit" id="submit-button" 
+         class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-700 transition-all active:scale-95 mt-4">
+         Send Message
+     </button>
+
+      <p id="confirmation-message" class="text-green-500 text-center mt-2 hidden">Message sent successfully!</p>
+    </form>
+
+
+    <!-- Social Links -->
+    <div class="flex justify-center space-x-4 sm:space-x-10 lg:space-x-16 mt-4 sm:mt-6 text-xl font-semibold">
+        <a href="https://t.me/navylamp" target="_blank" class="flex items-center gap-2 text-blue-500 hover:text-blue-700">
+            <i class="fab fa-telegram-plane text-2xl"></i> Telegram
+        </a>
+        <a href="https://www.linkedin.com/in/tymur-buiadzhi/" target="_blank" class="flex items-center gap-2 text-blue-500 hover:text-blue-700">
+            <i class="fab fa-linkedin text-2xl"></i> LinkedIn
+        </a>
+    </div>
+</section>
+
+<!-- JavaScript for AJAX Form Submission -->
+<script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        let submitButton = document.getElementById("submit-button");
+        let confirmationMessage = document.getElementById("confirmation-message");
+        let errorMessage = document.getElementById("error-message");
+
+        submitButton.innerText = "Sending...";
+        submitButton.disabled = true; // Disable button while sending
+
+        let formData = new FormData(this); // Collect form data
+
+        // AJAX request using Fetch API
+        fetch("https://formsubmit.co/ajax/11a7eaae64b500aea07406c4fab6d079", {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                confirmationMessage.classList.remove("hidden"); // Show success message
+                errorMessage.classList.add("hidden");
+                this.reset(); // Reset form fields
+            } else {
+                errorMessage.classList.remove("hidden"); // Show error message
+                confirmationMessage.classList.add("hidden");
+            }
+        })
+        .catch(() => {
+            errorMessage.classList.remove("hidden"); // Show error message if the request fails
+            confirmationMessage.classList.add("hidden");
+        })
+        .finally(() => {
+            submitButton.innerText = "Send Message";
+            submitButton.disabled = false; // Re-enable button
+        });
+    });
+</script>
+
+
+
+
+</main>
+    <script>
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu-dropdown');
+
+  menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+</body>
+</html>
