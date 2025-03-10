@@ -5,7 +5,7 @@ pagination:
   data: collections.posts
   size: 10
   alias: posts
-  reverse: true
+  reverse: false
 permalink: "/blog{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1 }}{% endif %}/"
 ---
 
@@ -13,66 +13,17 @@ permalink: "/blog{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1
     <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">Blog Posts</h1>
 
     <!-- Search Bar & Categories -->
-    <div class="flex flex-col space-y-4 mb-6">
-        <!-- Search Bar - Moved to top for better mobile UX -->
-        <input type="text" id="search-input" class="border p-3 rounded-lg w-full" placeholder="Search posts...">
-        
-        <!-- Categories - Scrollable container for small screens -->
-        <div class="overflow-x-auto pb-2">
-            <div class="flex space-x-2 min-w-max">
-                <button class="category-filter active bg-blue-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" data-category="all">All</button>
-                <button class="category-filter bg-green-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" data-category="Project Management">Project Management</button>
-            <!-- <button class="category-filter bg-yellow-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" data-category="Tech">Tech</button> -->
-                <button class="category-filter bg-red-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" data-category="Personal">Personal</button>
-            </div>
-        </div>
-    </div>
+    {% include "search-filter.njk" %}
 
     <!-- Blog Posts List -->
     <ul id="blog-list" class="space-y-4 sm:space-y-6">
         {% for post in posts %}
-        <li class="bg-white p-4 sm:p-6 shadow rounded-lg post-item" 
-            data-title="{{ post.data.title }}" 
-            data-content="{{ post.templateContent | striptags }}" 
-            data-category="{{ post.data.tags | join(' ') }}">
-            
-            <a href="{{ post.url }}" class="text-xl sm:text-2xl font-bold text-blue-600 hover:underline block">
-                {{ post.data.title }}
-            </a>
-
-            <p class="text-gray-500 text-xs sm:text-sm mt-1">
-                {{ post.date | date }} • 
-                {{ (post.templateContent | striptags | length / 1150) | round }} min read
-            </p>
-
-            <p class="text-gray-700 text-sm sm:text-base mt-2">
-                {{ post.templateContent | striptags | slice(0, 150) ~ "..." }}
-            </p>
-            
-            <a href="{{ post.url }}" class="text-blue-500 hover:underline mt-2 inline-block">Read More</a>
-        </li>
+            {% include "post-item.njk" %}
         {% endfor %}
     </ul>
 
     <!-- Pagination -->
-    <div class="mt-8 flex justify-center flex-wrap gap-2">
-        {% if pagination.previousPage %}
-        <a href="{{ pagination.previousPageUrl }}" class="bg-gray-300 text-gray-700 px-3 py-2 text-sm rounded-lg">Previous</a>
-        {% endif %}
-
-        <div class="flex flex-wrap gap-2 justify-center">
-        {% for pageIndex in range(0, pagination.pages | length - 1) %}
-            <a href="{{ pagination.hrefs[pageIndex] }}" 
-               class="w-8 h-8 flex items-center justify-center rounded-lg text-sm {% if pageIndex == pagination.pageNumber %}bg-blue-500 text-white{% else %}bg-gray-200{% endif %}">
-               {{ pageIndex + 1 }}
-            </a>
-        {% endfor %}
-        </div>
-
-        {% if pagination.nextPage %}
-        <a href="{{ pagination.nextPageUrl }}" class="bg-gray-300 text-gray-700 px-3 py-2 text-sm rounded-lg">Next</a>
-        {% endif %}
-    </div>
+    {% include "pagination.njk" %}
 </section>
 
 <!-- Link the JavaScript file -->

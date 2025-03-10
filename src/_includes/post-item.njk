@@ -13,7 +13,7 @@
     </p>
 
     <p class="text-gray-700 text-sm sm:text-base mt-2">
-        {{ post.templateContent | striptags | slice(0, 150) ~ "..." }}
+        {{ post.templateContent | striptags | truncate(170, true) | safe }}
     </p>
     
     <a href="{{ post.url }}" class="text-blue-500 hover:underline mt-2 inline-block">Read More</a>
