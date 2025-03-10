@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/styles/output.css">
+
+    {% if layout == "post.njk" %}
+        <link rel="stylesheet" href="/styles/blog.css">
+    {% endif %}
 </head>
 <body class="bg-gray-100 text-gray-900">
-    {% include "navbar.njk" %}  <!-- ✅ Includes the navbar here -->
+    {% include "navbar.njk" %}
 
-    <main class="max-w-4xl mx-auto p-6">
-        {{ content | safe }}
-    </main>
+<main class="max-w-4xl mx-auto p-4 sm:p-6">
+    {{ content | safe }}
+</main>
+    <script>
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu-dropdown');
+
+  menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
 </body>
 </html>

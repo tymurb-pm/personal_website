@@ -3,396 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Do We Need Projects at All? - Blog</title>
+    <title>Why Do We Need Projects at All?</title>
     <link rel="stylesheet" href="/styles/output.css">
-    <style>
-        /* Enhanced Typography & Readability */
-        :root {
-            --text-primary: #333;
-            --text-secondary: #555;
-            --text-muted: #6b7280;
-            --background-primary: #fff;
-            --background-secondary: #F9F9F9;
-            --accent-color: #1a73e8;
-            --border-color: #e5e7eb;
-            --code-background: #f5f7fa;
-        }
-        
-        body {
-            font-family: 'Georgia', serif;
-            background-color: var(--background-secondary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        
-        main {
-            width: 100%;
-            max-width: 900px;
-            margin: 16px auto;
-            padding: 16px;
-            background: var(--background-primary);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
-            box-sizing: border-box;
-        }
-        
-        @media (min-width: 640px) {
-            main {
-                margin: 32px auto;
-                padding: 32px;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            main {
-                margin: 48px auto;
-                padding: 48px;
-            }
-        }
-        
-        /* Typography */
-        h1 {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
 
-        h2 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-top: 32px;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 24px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-        
-        @media (min-width: 640px) {
-            h1 {
-                font-size: 2.2rem;
-                margin-bottom: 20px;
-            }
-            
-            h2 {
-                font-size: 1.6rem;
-                margin-top: 40px;
-                margin-bottom: 14px;
-            }
-            
-            h3 {
-                font-size: 1.3rem;
-                margin-top: 28px;
-            }
-            
-            p {
-                font-size: 1.05rem;
-                margin-bottom: 22px;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 2.6rem;
-                margin-bottom: 24px;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-                margin-top: 48px;
-                margin-bottom: 16px;
-            }
-            
-            h3 {
-                font-size: 1.4rem;
-                margin-top: 32px;
-                margin-bottom: 12px;
-            }
-            
-            p {
-                font-size: 1.15rem;
-                margin-bottom: 24px;
-            }
-        }
-
-        /* Links */
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Quotes */
-        blockquote {
-            border-left: 4px solid var(--accent-color);
-            padding: 12px 16px;
-            margin: 24px 0;
-            background: var(--background-secondary);
-            border-radius: 0 4px 4px 0;
-        }
-
-        blockquote p {
-            font-style: italic;
-            color: var(--text-secondary);
-            margin-bottom: 0;
-        }
-        
-        @media (min-width: 640px) {
-            blockquote {
-                padding: 16px 24px;
-                margin: 32px 0;
-            }
-        }
-
-        /* Code styling */
-        pre {
-            background: var(--code-background);
-            padding: 16px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            overflow-x: auto;
-            margin: 20px 0;
-            border: 1px solid var(--border-color);
-        }
-
-        code {
-            background: var(--code-background);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: 'Menlo', 'Monaco', 'Consolas', monospace;
-            font-size: 0.85em;
-        }
-        
-        @media (min-width: 640px) {
-            pre {
-                padding: 20px;
-                font-size: 0.95rem;
-                margin: 24px 0;
-            }
-            
-            code {
-                font-size: 0.9em;
-            }
-        }
-
-        /* Lists styling */
-        ul, ol {
-            margin: 20px 0;
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        
-        @media (min-width: 640px) {
-            ul, ol {
-                margin: 24px 0;
-                padding-left: 24px;
-            }
-            
-            li {
-                margin-bottom: 12px;
-                font-size: 1.05rem;
-                line-height: 1.7;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            li {
-                font-size: 1.15rem;
-            }
-        }
-
-        /* Meta information */
-        .meta {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        
-        @media (min-width: 640px) {
-            .meta {
-                font-size: 0.95rem;
-                margin-bottom: 28px;
-                gap: 16px;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .meta {
-                font-size: 1rem;
-                margin-bottom: 32px;
-            }
-        }
-
-        /* Back link */
-        .back-link {
-            display: inline-block;
-            margin-bottom: 24px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            padding: 8px 0;
-        }
-        
-        @media (min-width: 640px) {
-            .back-link {
-                margin-bottom: 28px;
-                font-size: 1rem;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .back-link {
-                margin-bottom: 32px;
-                font-size: 1.05rem;
-            }
-        }
-
-        /* Examples and callouts */
-        .example {
-            background: #f8f9ff;
-            border-left: 4px solid #d1d5db;
-            padding: 12px 16px;
-            margin: 20px 0;
-            border-radius: 0 4px 4px 0;
-            font-style: italic;
-        }
-        
-        @media (min-width: 640px) {
-            .example {
-                padding: 16px 24px;
-                margin: 24px 0;
-            }
-        }
-
-        /* Section styling */
-        .section {
-            margin-bottom: 36px;
-        }
-        
-        @media (min-width: 768px) {
-            .section {
-                margin-bottom: 48px;
-            }
-        }
-
-        /* Feature lists */
-        .feature-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .feature-list li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
-            background: #f9f9fb;
-            padding: 12px;
-            border-radius: 6px;
-        }
-
-        .feature-list .icon {
-            margin-right: 12px;
-            color: var(--accent-color);
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-        
-        @media (min-width: 640px) {
-            .feature-list li {
-                margin-bottom: 16px;
-                padding: 16px;
-                align-items: center;
-            }
-            
-            .feature-list .icon {
-                margin-right: 16px;
-                font-size: 1.2rem;
-            }
-        }
-        
-        /* Tags */
-        .tags {
-            margin-top: 36px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .tag {
-            display: inline-block; 
-            background: #f3f4f6; 
-            padding: 6px 12px; 
-            border-radius: 20px; 
-            font-size: 0.9rem; 
-            color: #374151;
-            margin-bottom: 8px;
-        }
-        
-        @media (min-width: 768px) {
-            .tags {
-                margin-top: 48px;
-            }
-        }
-        
-        /* Handle images responsively */
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            margin: 24px 0;
-        }
-    </style>
+    
+        <link rel="stylesheet" href="/styles/blog.css">
+    
 </head>
-<body>
+<body class="bg-gray-100 text-gray-900">
     <header class="bg-white shadow-md">
-    <nav class="max-w-4xl mx-auto flex justify-between items-center p-4">
-        <a href="/" class="text-xl font-bold text-gray-800">Tymur Buiadzhi</a>
-        <div class="space-x-4">
-            <a href="/" class="text-gray-600 hover:text-gray-900">Home</a>
-            <a href="/blog/" class="text-gray-600 hover:text-gray-900">Blog</a>
-            <a href="/cv/" class="text-gray-600 hover:text-gray-900">CV</a>
-            <a href="/contact/" class="text-gray-600 hover:text-gray-900">Contact</a>
-        </div>
-    </nav>
+  <nav class="max-w-4xl mx-auto flex justify-between items-center p-4">
+    <a href="/" class="text-xl font-bold text-gray-800">Tymur Buiadzhi</a>
+    <!-- Hamburger Button: Visible on mobile -->
+    <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+      <!-- Simple icon (could be replaced with an SVG) -->
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+    <!-- Navigation Links: Hidden on mobile -->
+    <div id="mobile-menu" class="hidden md:flex space-x-4">
+      <a href="/" class="text-gray-600 hover:text-gray-900">Home</a>
+      <a href="/blog/" class="text-gray-600 hover:text-gray-900">Blog</a>
+      <a href="/cv/" class="text-gray-600 hover:text-gray-900">CV</a>
+      <a href="/contact/" class="text-gray-600 hover:text-gray-900">Contact</a>
+    </div>
+  </nav>
+  <!-- Mobile Menu: Visible when toggled -->
+  <div id="mobile-menu-dropdown" class="hidden md:hidden bg-white shadow-md">
+    <a href="/" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Home</a>
+    <a href="/blog/" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Blog</a>
+    <a href="/cv/" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">CV</a>
+    <a href="/contact/" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contact</a>
+  </div>
 </header>
 
-    <main>
-        <a href="/blog" class="back-link">&larr; Back to Blog</a>
-        
-        <h1>Why Do We Need Projects at All?</h1>
-        <div class="meta">
-            <span>March 09, 2025</span>
-            <span>•</span>
-            <span>3 min read</span>
-        </div>
 
-        <article class="prose">
-            <p>Have you ever wondered why companies initiate projects? Maybe you've heard the saying:</p>
+<main class="max-w-4xl mx-auto p-4 sm:p-6">
+    
+<div class="post-wrapper">
+    <a href="/blog" class="back-link">&larr; Back to Blog</a>
+
+    <h1 class="text-3xl font-bold">Why Do We Need Projects at All?</h1>
+    <div class="meta">
+        <span>March 09, 2025</span>
+        <span>•</span>
+        <span>3 min read</span>
+    </div>
+
+    <article class="prose lg:prose-xl">
+        <p>Have you ever wondered why companies initiate projects? Maybe you've heard the saying:</p>
 <blockquote>
 <p>&quot;If you want something not to get done, call it a project.&quot;</p>
 </blockquote>
@@ -414,39 +75,26 @@
 <p>From my own experience onboard ships, <strong>projects provided the greatest sense of purpose</strong>. Whether it was completely updating documentation or overhauling ventilation systems, these projects brought motivation and satisfaction. In such moments, you feel you're doing something meaningful and valuable.</p>
 <p>In summary, <strong>companies launch projects to grow, respond to changes, and maintain their competitive edge</strong>. Often, people don't fully grasp why they need projects or why they should learn project management. But properly organized projects are vital tools for business survival and success in the modern world. So, if you want not just to sustain but also to develop your business, <strong>you simply can’t avoid projects</strong>. Initiate projects—they are the driving force that moves your company forward.</p>
 
-        </article>
-        
-  <!-- 
-     <div class="tags">
-           
-           <a href="/tags/Project Management" class="tag">Project Management</a>
+    </article>
+
+    
+        <div class="tags">
+            
+                <a href="/tags/Project Management" class="tag">Project Management</a>
             
         </div>
-        
-    </main> -->
+    
+</div>
 
+</main>
     <script>
-        // Add icon classes to features list items - runs after content is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Process features lists - assumes the content includes such lists with specific classes
-            const featureLists = document.querySelectorAll('.feature-list');
-            featureLists.forEach(list => {
-                const items = list.querySelectorAll('li');
-                items.forEach(item => {
-                    // If there's an emoji at the start, wrap it in a span
-                    const text = item.innerHTML;
-                    if (text.match(/^(\p{Emoji}|\p{Emoji_Presentation})/u)) {
-                        item.innerHTML = text.replace(/^(\p{Emoji}|\p{Emoji_Presentation})/u, '<span class="icon">$&</span>');
-                    }
-                });
-            });
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu-dropdown');
 
-            // Format examples
-            const examples = document.querySelectorAll('p:contains("Example:")');
-            examples.forEach(example => {
-                example.classList.add('example');
-            });
-        });
-    </script>
+  menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
 </body>
 </html>

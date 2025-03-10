@@ -1,0 +1,19 @@
+<div class="flex flex-col space-y-4 mb-6">
+    <!-- Search Bar -->
+    <input type="text" id="search-input" class="border p-3 rounded-lg w-full" placeholder="Search posts...">
+
+    <!-- Categories -->
+    <div class="overflow-x-auto pb-2">
+        <div class="flex space-x-2 min-w-max">
+            {% set categories = ["all", "Project Management", "Personal"] %}
+            {% set colors = { "all": "blue", "Project Management": "green", "Personal": "red" } %}
+
+            {% for category in categories %}
+                <button class="category-filter {% if category == 'all' %}active{% endif %} bg-{{ colors[category] }}-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" 
+                        data-category="{{ category }}">
+                    {{ category | capitalize }}
+                </button>
+            {% endfor %}
+        </div>
+    </div>
+</div>
