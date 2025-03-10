@@ -1,0 +1,18 @@
+<div class="mt-8 flex justify-center flex-wrap gap-2">
+    {% if pagination.previousPage %}
+        <a href="{{ pagination.previousPageUrl }}" class="bg-gray-300 text-gray-700 px-3 py-2 text-sm rounded-lg">Previous</a>
+    {% endif %}
+
+    <div class="flex flex-wrap gap-2 justify-center">
+        {% for pageIndex in range(0, pagination.pages | length - 1) %}
+            <a href="{{ pagination.hrefs[pageIndex] }}" 
+               class="w-8 h-8 flex items-center justify-center rounded-lg text-sm {% if pageIndex == pagination.pageNumber %}bg-blue-500 text-white{% else %}bg-gray-200{% endif %}">
+               {{ pageIndex + 1 }}
+            </a>
+        {% endfor %}
+    </div>
+
+    {% if pagination.nextPage %}
+        <a href="{{ pagination.nextPageUrl }}" class="bg-gray-300 text-gray-700 px-3 py-2 text-sm rounded-lg">Next</a>
+    {% endif %}
+</div>
