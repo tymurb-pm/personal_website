@@ -12,7 +12,7 @@
 
 /* General Page Styling */
 body {
-    font-family: 'Georgia', serif;
+    font-family: inherit;
     background-color: var(--background-secondary);
     color: var(--text-primary);
     line-height: 1.6;
