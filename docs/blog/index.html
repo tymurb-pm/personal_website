@@ -11,47 +11,83 @@
 </head>
 <body class="bg-gray-100 text-gray-900">
     <style>
-  /* Fixed padding for the navbar to prevent jumping */
   body {
-    padding-top: 64px; /* Adjust to match navbar height */
+    padding-top: 64px;
   }
 
-  /* Navbar remains fixed at the top */
   #navbar {
-    height: 64px; /* Ensure consistent height */
+    height: 64px;
     transition: transform 0.5s ease, opacity 0.3s ease-in;
+  }
 
+  .nav-link {
+    position: relative;
+    transition: color 0.3s ease-in-out;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+  .nav-link:not(.active-link):hover::after {
+  width: 100%;
+  left: 0;
+  }
+
+
+  .active-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+  }
+
+  #mobile-menu-dropdown {
+    display: none;
+    transition: all 0.3s ease-in-out;
   }
 </style>
 
-<header id="navbar" class="bg-white shadow-md fixed top-0 left-0 w-full transition-transform duration-300">
+<header id="navbar" class="bg-white shadow-md fixed top-0 left-0 w-full">
   <nav class="max-w-4xl mx-auto flex justify-between items-center p-4">
     <a href="/" class="text-xl font-bold text-gray-800">Tymur Buiadzhi</a>
+    
     <button id="mobile-menu-button" class="md:hidden focus:outline-none">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
-    <div id="mobile-menu" class="hidden md:flex space-x-4">
-      <a href="/" class="text-gray-600 hover:text-gray-900">Home</a>
-      <a href="/blog/" class="text-gray-600 hover:text-gray-900">Blog</a>
-      <a href="/cv/" class="text-gray-600 hover:text-gray-900">CV</a>
-      <a href="/contact-page/" class="text-gray-600 hover:text-gray-900">Contact</a>
+
+    <div id="desktop-menu" class="hidden md:flex space-x-8">
+      <a href="/" class="nav-link text-gray-600 hover:text-gray-900">Home</a>
+      <a href="/blog/" class="nav-link text-gray-600 hover:text-gray-900">Blog</a>
+      <a href="/cv/" class="nav-link text-gray-600 hover:text-gray-900">CV</a>
+      <a href="/contact-page/" class="nav-link text-gray-600 hover:text-gray-900">Contact</a>
     </div>
   </nav>
-  <div id="mobile-menu-dropdown" class="hidden md:hidden bg-white shadow-md">
-    <a href="/" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Home</a>
-    <a href="/blog/" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Blog</a>
-    <a href="/cv/" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">CV</a>
-    <a href="/contact-page/" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contact</a>
+  
+  <div id="mobile-menu-dropdown" class="md:hidden bg-white shadow-md">
+    <a href="/" class="block px-4 py-3 text-lg tracking-wide text-gray-600 hover:bg-gray-100 border-t border-gray-200">Home</a>
+    <a href="/blog/" class="block px-4 py-3 text-lg tracking-wide text-gray-600 hover:bg-gray-100 border-t border-gray-200">Blog</a>
+    <a href="/cv/" class="block px-4 py-3 text-lg tracking-wide text-gray-600 hover:bg-gray-100 border-t border-gray-200">CV</a>
+    <a href="/contact-page/" class="block px-4 py-3 text-lg tracking-wide text-gray-600 hover:bg-gray-100 border-t border-gray-200">Contact</a>
   </div>
 </header>
 
 <script>
   let lastScrollY = window.scrollY;
   let navbar = document.getElementById('navbar');
-  let scrollThreshold = 50; // Adjust based on preference
+  let mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
+  let mobileMenuButton = document.getElementById('mobile-menu-button');
+  let scrollThreshold = 50;
   let accumulatedScroll = 0;
   let isScrollingDown = false;
 
@@ -61,25 +97,37 @@
 
     if (accumulatedScroll > scrollThreshold) {
       isScrollingDown = true;
-      accumulatedScroll = 0; // Reset after threshold is reached
+      accumulatedScroll = 0;
     } else if (accumulatedScroll < -scrollThreshold) {
       isScrollingDown = false;
-      accumulatedScroll = 0; // Reset after threshold is reached
+      accumulatedScroll = 0;
     }
 
-    if (isScrollingDown) {
-      navbar.style.transform = 'translateY(-100%)';
-    } else {
-      navbar.style.transform = 'translateY(0)';
-    }
-
+    navbar.style.transform = isScrollingDown ? 'translateY(-100%)' : 'translateY(0)';
     lastScrollY = window.scrollY;
   });
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenuDropdown.style.display = mobileMenuDropdown.style.display === 'block' ? 'none' : 'block';
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      mobileMenuDropdown.style.display = 'none';
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    let currentPath = window.location.pathname;
+    document.querySelectorAll(".nav-link").forEach(link => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("active-link");
+      } else {
+        link.classList.remove("active-link");
+      }
+    });
+  });
 </script>
-
-
-
-
 
 <main class="max-w-4xl mx-auto p-4 sm:p-6">
     
@@ -88,34 +136,67 @@
 
     <!-- Search Bar & Categories -->
     <div class="flex flex-col space-y-4 mb-6">
-    <!-- Search Bar -->
-    <input type="text" id="search-input" class="border p-3 rounded-lg w-full" placeholder="Search posts...">
+  <!-- Search Bar -->
+  <input type="text" id="search-input" class="border p-3 rounded-lg w-full" placeholder="Search posts...">
 
-    <!-- Categories -->
-    <div class="overflow-x-auto pb-2">
-        <div class="flex space-x-2 min-w-max">
-            
-            
-
-            
-                <button class="category-filter active bg-blue-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" 
-                        data-category="all">
-                    All
-                </button>
-            
-                <button class="category-filter  bg-green-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" 
-                        data-category="Project Management">
-                    Project management
-                </button>
-            
-                <button class="category-filter  bg-red-500 text-white px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap" 
-                        data-category="Personal">
-                    Personal
-                </button>
-            
-        </div>
+  <!-- Categories -->
+  <div class="overflow-x-auto pb-2">
+    <div class="flex space-x-2 min-w-max">
+      
+      
+      
+      
+        <button 
+          class="category-filter bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap"
+          data-category="all">
+          All
+        </button>
+      
+        <button 
+          class="category-filter bg-green-500 text-white hover:bg-green-600 transition-colors duration-300 px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap"
+          data-category="Project Management">
+          Project management
+        </button>
+      
+        <button 
+          class="category-filter bg-red-500 text-white hover:bg-red-600 transition-colors duration-300 px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap"
+          data-category="Personal">
+          Personal
+        </button>
+      
     </div>
+  </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const categoryButtons = document.querySelectorAll('.category-filter');
+  
+  // Initially mark the "all" filter as active
+  document.querySelector('.category-filter[data-category="all"]').classList.add('active');
+
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      categoryButtons.forEach(btn => btn.classList.remove('active'));
+      
+      // Add active class to the clicked button
+      button.classList.add('active');
+      
+      // Optional: Filter posts based on button.dataset.category
+      console.log("Active filter:", button.dataset.category);
+    });
+  });
+});
+</script>
+
+<style>
+/* Concave active filter styling (pressed-in look) */
+.category-filter.active {
+  box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.2),
+              inset -4px -4px 6px rgba(255, 255, 255, 0.2);
+}
+</style>
 
 
     <!-- Blog Posts List -->
