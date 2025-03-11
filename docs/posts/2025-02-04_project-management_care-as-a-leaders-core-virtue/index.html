@@ -15,12 +15,14 @@
     <style>
   /* Fixed padding for the navbar to prevent jumping */
   body {
-    padding-top: 55px; /* Adjust to match navbar height */
+    padding-top: 64px; /* Adjust to match navbar height */
   }
 
   /* Navbar remains fixed at the top */
   #navbar {
-    height: 55px; /* Ensure consistent height */
+    height: 64px; /* Ensure consistent height */
+    transition: transform 0.5s ease, opacity 0.3s ease-in;
+
   }
 </style>
 
@@ -50,17 +52,35 @@
 
 <script>
   let lastScrollY = window.scrollY;
-  const navbar = document.getElementById('navbar');
+  let navbar = document.getElementById('navbar');
+  let scrollThreshold = 50; // Adjust based on preference
+  let accumulatedScroll = 0;
+  let isScrollingDown = false;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > lastScrollY) {
+    let scrollDifference = window.scrollY - lastScrollY;
+    accumulatedScroll += scrollDifference;
+
+    if (accumulatedScroll > scrollThreshold) {
+      isScrollingDown = true;
+      accumulatedScroll = 0; // Reset after threshold is reached
+    } else if (accumulatedScroll < -scrollThreshold) {
+      isScrollingDown = false;
+      accumulatedScroll = 0; // Reset after threshold is reached
+    }
+
+    if (isScrollingDown) {
       navbar.style.transform = 'translateY(-100%)';
     } else {
       navbar.style.transform = 'translateY(0)';
     }
+
     lastScrollY = window.scrollY;
   });
 </script>
+
+
+
 
 
 <main class="max-w-4xl mx-auto p-4 sm:p-6">
