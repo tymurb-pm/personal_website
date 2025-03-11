@@ -1,4 +1,4 @@
-/* Enhanced Typography & Readability */
+/* ========== Variables ========== */
 :root {
     --text-primary: #333;
     --text-secondary: #555;
@@ -10,20 +10,20 @@
     --code-background: #f5f7fa;
 }
 
-/* General Page Styling */
+/* ========== General Page Styling ========== */
 body {
     font-family: inherit;
     background-color: var(--background-secondary);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
     padding: 0;
 }
 
-/* Blog Post Wrapper */
+/* ========== Blog Post Wrapper ========== */
 .post-wrapper {
     width: 100%;
-    max-width: 900px;
+    max-width: 800px;
     margin: 16px auto;
     padding: 16px;
     background: var(--background-primary);
@@ -32,74 +32,60 @@ body {
     box-sizing: border-box;
 }
 
-
-/* Small screens - Full width and background-primary */
+/* ========== Responsive Design ========== */
 @media (max-width: 639px) {
     .post-wrapper {
-        width: 100vw;  /* Full width */
-        max-width: 100%; /* Override max-width */
-        margin: 0;  /* Remove margin */
+        width: 100vw;
+        max-width: 100%;
+        margin: 0;
         padding: 16px;
-        background: var(--background-primary); /* White background */
-        border-radius: 0; /* Remove border-radius */
-        box-shadow: none; /* Remove box-shadow for a flat design */
+        border-radius: 0;
+        box-shadow: none;
     }
-
-    h1 {
-        font-size: 2rem;
-    }
-    
-    p, li {
-        font-size: 1rem;
-    }
+    h1 { font-size: 2rem; }
+    p, li { font-size: 1rem; }
 }
 
 @media (min-width: 640px) {
     .post-wrapper {
-        background: var(--background-secondary);
-        margin: 16px auto;
         padding: 32px;
     }
 }
 
-
-
-/* Typography */
-h1 {
-    font-size: 2.6rem;
+/* ========== Typography ========== */
+h1, h2, h3, h4 {
     font-weight: bold;
+}
+
+h1 {
+    font-size: 2.4rem;
     margin-bottom: 24px;
     line-height: 1.2;
 }
 
 h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-top: 48px;
-    margin-bottom: 16px;
+    font-size: 2rem;
+    margin: 48px 0 16px;
     color: var(--text-primary);
 }
 
 h3 {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-top: 32px;
-    margin-bottom: 12px;
+    font-size: 1.6rem;
+    margin: 32px 0 12px;
 }
 
 h4 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 32px;
-    margin-bottom: 12px;
+    font-size: 1.4rem;
+    margin: 32px 0 12px;
 }
 
 p {
     font-size: 1.15rem;
     margin-bottom: 24px;
+    max-width: 75ch;
 }
 
-/* Links */
+/* ========== Links ========== */
 a {
     color: var(--accent-color);
     text-decoration: none;
@@ -110,7 +96,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Quotes */
+/* ========== Blockquotes ========== */
 blockquote {
     border-left: 4px solid var(--accent-color);
     padding: 12px 16px;
@@ -125,7 +111,7 @@ blockquote p {
     margin-bottom: 0;
 }
 
-/* Code Styling */
+/* ========== Code Styling ========== */
 pre {
     background: var(--code-background);
     padding: 16px;
@@ -144,7 +130,7 @@ code {
     font-size: 0.85em;
 }
 
-/* Lists */
+/* ========== Lists ========== */
 ul, ol {
     margin: 20px 0;
     padding-left: 20px;
@@ -155,39 +141,20 @@ li {
     font-size: 1.15rem;
 }
 
-/* Bullet Styling for Unordered Lists */
-ul {
-    list-style-type: disc; /* Use disc bullets */
-}
+ul { list-style-type: disc; }
+ul ul { list-style-type: circle; }
+ul ul ul { list-style-type: square; }
 
-ul ul {
-    list-style-type: circle; /* Nested lists use circles */
-}
+ol { list-style-type: decimal; }
+ol ol { list-style-type: lower-alpha; }
+ol ol ol { list-style-type: lower-roman; }
 
-ul ul ul {
-    list-style-type: square; /* Deeper nested lists use squares */
-}
-
-/* Numbering Style for Ordered Lists */
-ol {
-    list-style-type: decimal; /* Standard numbers */
-}
-
-ol ol {
-    list-style-type: lower-alpha; /* Nested lists use a, b, c */
-}
-
-ol ol ol {
-    list-style-type: lower-roman; /* Deeper levels use i, ii, iii */
-}
-
-/* Custom Styling for List Items */
 li::marker {
-    color: #005aba; /* Blue color for bullets/numbers */
+    color: #005aba;
     font-weight: bold;
 }
 
-/* Meta Information */
+/* ========== Meta Information ========== */
 .meta {
     color: var(--text-muted);
     font-size: 1rem;
@@ -197,16 +164,35 @@ li::marker {
     gap: 12px;
 }
 
-/* Back to Blog Link */
+/* ========== Back to Blog Link ========== */
 .back-link {
-    display: inline-block;
-    margin-bottom: 24px;
-    font-weight: bold;
-    font-size: 1.5rem;
-    padding: 8px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 12px;
+    border: 1.5px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 16px;
 }
 
-/* Tags */
+.back-link:hover {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0px 3px 6px rgba(0, 123, 255, 0.2);
+}
+
+.back-link svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ========== Tags ========== */
 .tags {
     margin-top: 36px;
     display: flex;
@@ -223,7 +209,7 @@ li::marker {
     margin-bottom: 8px;
 }
 
-/* Responsive Image Handling */
+/* ========== Responsive Image Handling ========== */
 img {
     max-width: 100%;
     height: auto;
