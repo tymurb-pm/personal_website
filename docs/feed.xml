@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="https://buiadzhi.com/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tim&#39;s Blog</title>
+    <link>https://buiadzhi.com/</link>
+    <atom:link href="https://buiadzhi.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Thoughts on IT Project Management</description>
+    <language>en</language>
+    <item>
+      <title>Is There Life Beyond Tuckman?</title>
+      <link>https://buiadzhi.com/posts/2025-01-24_project-management_beyond-tuckman/</link>
+      <description>&lt;p&gt;Many of us have experienced teams that function seamlessly from the outset: tasks are executed smoothly, mutual respect feels natural, and deadlines cause no panic.&lt;/p&gt;
+&lt;p&gt;However, numerous other teams experience ongoing tension, misunderstandings, or conflicts. Often, this tension isn&#39;t due to an unwillingness to cooperate but rather stems from a lack of clarity, trust, or shared goals from the very beginning.&lt;/p&gt;
+&lt;p&gt;This is where &lt;strong&gt;team development models&lt;/strong&gt; come into play, providing us with a roadmap explaining how people collaborate, communicate, and evolve together over time.&lt;/p&gt;
+&lt;h3&gt;Classic Starting Point: Tuckman&#39;s Model&lt;/h3&gt;
+&lt;p&gt;If you&#39;ve heard of any team development theory, it&#39;s likely Tuckman’s Model, which outlines five stages:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Forming&lt;/strong&gt; – Team members get acquainted; roles are unclear, and everyone acts cautiously.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Storming&lt;/strong&gt; – Conflicts arise as personalities and opinions clash, increasing tension.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Norming&lt;/strong&gt; – The group begins resolving conflicts, establishing norms, and building cooperation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Performing&lt;/strong&gt; – The team works cohesively, focusing on common goals and achieving high productivity.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Adjourning&lt;/strong&gt; – The team completes tasks and either disbands or moves to new challenges.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Tuckman’s model serves as an excellent introduction to group dynamics, highlighting conflict (Storming) as a natural part of growth.&lt;/p&gt;
+&lt;p&gt;Yet, Tuckman&#39;s sequence might seem overly linear for modern workplace challenges. Today’s teams are rarely static; people come and go, objectives shift, and market conditions can change overnight.&lt;/p&gt;
+&lt;p&gt;This linear approach doesn&#39;t always match real-world complexities. Additionally, crucial elements like trust and emotional safety—highlighted by research such as Google&#39;s &amp;quot;Project Aristotle&amp;quot;—are not explicitly emphasized in Tuckman’s stages.&lt;/p&gt;
+&lt;h3&gt;Drexler-Sibbet Model&lt;/h3&gt;
+&lt;p&gt;The Drexler-Sibbet Model expands upon Tuckman’s framework, emphasizing emotional and interpersonal elements crucial to team success or failure. It consists of seven stages:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Orientation&lt;/strong&gt; – &amp;quot;Why are we here? What&#39;s the big picture?&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trust Building&lt;/strong&gt; – &amp;quot;Can I rely on you, and can you rely on me?&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Goal Clarification&lt;/strong&gt; – &amp;quot;What exactly are we trying to achieve?&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Commitment&lt;/strong&gt; – &amp;quot;How do we make decisions, and what is each person’s role?&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Implementation&lt;/strong&gt; – &amp;quot;Let’s get working: who does what, and how do we track progress?&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;High Performance&lt;/strong&gt; – &amp;quot;We’re excelling. How do we maintain this momentum?&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Renewal&lt;/strong&gt; – &amp;quot;What have we learned, and where do we go next?&amp;quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This model notably prioritizes trust and renewal, suggesting that teams often revisit previous stages, particularly when new members join or project scopes change.&lt;/p&gt;
+&lt;h3&gt;Three Key Arguments in Favor of This Model&lt;/h3&gt;
+&lt;h4&gt;1. Explicit Focus on Trust and Emotional Dynamics&lt;/h4&gt;
+&lt;p&gt;According to &lt;a href=&quot;https://psychsafety.com/googles-project-aristotle/&quot;&gt;Google’s &amp;quot;Project Aristotle&amp;quot; (2017)&lt;/a&gt;, &lt;strong&gt;psychological safety&lt;/strong&gt; (trust) is the primary determinant of a high-performing team. Drexler-Sibbet explicitly dedicates a stage to building trust, whereas Tuckman addresses it only indirectly.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Imagine a project team that, despite having all required skills, struggles to collaborate effectively. Later, it&#39;s discovered that half the team doubts the others&#39; abilities. Once the team discusses these concerns and clarifies individual strengths, productivity significantly improves. Trust is essential for smooth collaboration.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;2. Continuous Renewal and Adaptation&lt;/h4&gt;
+&lt;p&gt;One main criticism of Tuckman’s model is its assumed linearity—from Forming to Storming to Norming—as if teams follow a straightforward path. Modern teams evolve cyclically; they might be &amp;quot;norming&amp;quot; on Monday and back to &amp;quot;storming&amp;quot; by Wednesday due to market shifts or changes in project roadmaps.&lt;/p&gt;
+&lt;p&gt;The Renewal stage in Drexler-Sibbet emphasizes regular reassessment, reflecting the ongoing nature of team development.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As management consultant Peter Drucker stated, &amp;quot;The greatest danger in times of turbulence is acting with yesterday’s logic.&amp;quot; The Renewal stage ensures teams avoid complacency.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h4&gt;3. Practical Tools for Facilitators&lt;/h4&gt;
+&lt;p&gt;The Drexler-Sibbet model includes visual tools and diagrams, such as the &lt;strong&gt;&amp;quot;Team Performance Model Chart,&amp;quot;&lt;/strong&gt; aiding in monitoring each stage. This provides facilitators with a clear map for resolving conflicts, clarifying goals, and sustaining performance.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.kaizenko.com/wp-content/uploads/2019/06/kaizenko-Drexler-Sibbet-Team-Performance-Model.png&quot; alt=&quot;Team Performance Model&quot;&gt;&lt;/p&gt;
+&lt;p&gt;While informative, Tuckman’s model lacks such comprehensive practical tools. Workshops frequently mention &amp;quot;Forming, Storming, Norming, Performing&amp;quot; but rarely provide guidance for recurrent conflicts. Drexler-Sibbet’s visualizations and structured questions simplify problem-solving.&lt;/p&gt;
+&lt;h3&gt;Using Drexler-Sibbet Alongside (or Instead of) Tuckman&lt;/h3&gt;
+&lt;p&gt;If you appreciate Tuckman’s simplicity, use the Drexler-Sibbet model as an extension. Begin with Tuckman’s overview and then focus on trust, roles, and reassessment with Drexler-Sibbet as your team evolves.&lt;/p&gt;
+&lt;h3&gt;Main Idea&lt;/h3&gt;
+&lt;p&gt;It’s tempting to assume that team spirit naturally arises when bringing together intelligent, motivated individuals. Reality often proves otherwise: teams struggle without trust and clear objectives.&lt;/p&gt;
+&lt;p&gt;The next time morale or productivity dips, consider that the issue may not be a lack of skills. Perhaps your team hasn&#39;t navigated the necessary stages for achieving genuine synergy.&lt;/p&gt;
+&lt;p&gt;To ensure your team doesn&#39;t just survive but thrives through collaboration and adaptability, embrace the Drexler-Sibbet model. It lays a strong foundation for trust, effectiveness, and growth.&lt;/p&gt;
+</description>
+      <pubDate>Fri, 24 Jan 2025 24:00:00 GMT</pubDate>
+      <dc:creator>Tim</dc:creator>
+      <guid>https://buiadzhi.com/posts/2025-01-24_project-management_beyond-tuckman/</guid>
+    </item>
+    <item>
+      <title>Care as a Leader’s Core Virtue</title>
+      <link>https://buiadzhi.com/posts/2025-02-04_project-management_care-as-a-leaders-core-virtue/</link>
+      <description>&lt;p&gt;Managerial roles vary widely, as do their responsibilities. However, there&#39;s a common trait uniting all leaders: the responsibility to support and develop their subordinates.&lt;/p&gt;
+&lt;p&gt;Often onboard ships, I&#39;ve heard officers complain about having to &amp;quot;babysit&amp;quot; grown men. In my opinion, this is a profound misunderstanding. Employees approach their leaders not only because they lack knowledge or experience but because they need support and recognition.&lt;/p&gt;
+&lt;p&gt;Here are two real-life examples:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;During my first contract with Stolt Tankers, I was a cadet. Chris, a cheerful and hardworking sailor, suddenly became withdrawn and quiet. Over a day passed, and no officer asked about his condition; instead, they complained about his declining performance.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After our watch, I decided to speak with him. It turned out his father had died two days earlier, and he still had two months left of his mandatory contract. He wanted to attend the funeral but was afraid to bring it up with our captain—a stern and indifferent man.&lt;/p&gt;
+&lt;p&gt;I spoke to the officer I worked with, and together we helped Chris write an early leave request. The chief officer brought it to the captain, and in the next port, we managed to find a replacement. The company incurred some costs but gained a loyal employee in return.&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Another incident occurred during my last contract. Ethan, a sailor, had a reputation for being unreliable and lazy, and all the officers treated him accordingly. We shared evening watches, during which I learned the company had promised him a promotion two years ago but never fulfilled their commitment. This caused Ethan to lose trust and interest in his job.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I spoke with the chief officer to find out why Ethan wasn&#39;t being promoted. After a detailed (and emotional) discussion, I decided to act. I began delegating more responsible tasks aligned with Ethan’s potential position. Despite his disappointment with the company, he worked efficiently and with enthusiasm. Thanks to his attentiveness, we avoided several significant issues. Eventually, the chief officer agreed to give Ethan a positive recommendation, and the captain formally requested the office approve Ethan’s promotion. Unfortunately, the company declined his promotion during that contract, suggesting he wait for the next one.&lt;/p&gt;
+&lt;p&gt;Did the company eventually fulfill its promise? I don&#39;t know, but one conclusion is clear: poor employee performance isn&#39;t always due to laziness. Most often, internal factors are involved.&lt;/p&gt;
+&lt;p&gt;In the first case, the problem was a crisis that demanded empathy. In the second, it was lost motivation that could have been restored.&lt;/p&gt;
+&lt;p&gt;Conclusion: A good leader recognizes that discipline without empathy breaks the team, and empathy without discipline makes it ineffective. It is precisely the balance between these two forces that determines how well a team functions.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 04 Feb 2025 24:00:00 GMT</pubDate>
+      <dc:creator>Tim</dc:creator>
+      <guid>https://buiadzhi.com/posts/2025-02-04_project-management_care-as-a-leaders-core-virtue/</guid>
+    </item>
+    <item>
+      <title>Why Do We Need Projects at All?</title>
+      <link>https://buiadzhi.com/posts/2025-03-09_project-management_why-do-we-need-projects-at-all/</link>
+      <description>&lt;p&gt;Have you ever wondered why companies initiate projects? Maybe you&#39;ve heard the saying:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;If you want something not to get done, call it a project.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It&#39;s a joke, of course, but it didn&#39;t appear out of nowhere. I&#39;ve often encountered situations where people and companies don&#39;t understand why they need project managers or what&#39;s so valuable about project work. The idea for this essay came from &lt;strong&gt;&lt;a href=&quot;https://www.linkedin.com/in/hanizex/&quot;&gt;Mykola Kalakutskyi&lt;/a&gt;&lt;/strong&gt;. The infamous story of Kodak, which lost its market due to ignoring the importance of innovative projects, perfectly illustrates this issue. So, why do companies actually launch projects?&lt;/p&gt;
+&lt;p&gt;To understand why companies need projects, it&#39;s worth clarifying some terms. Every &lt;strong&gt;project has two key characteristics&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It has a beginning and an end.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It results in something new and unique.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, &lt;strong&gt;building a new ship is a project&lt;/strong&gt;. Launching a marketing campaign for a new product is also a project. Writing new procedures for company operations—again, a project. These activities have clear beginnings, ends, and unique outcomes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is the opposite of projects? Operations.&lt;/strong&gt; Operations are continuous, repetitive activities without a definite end. For instance, when I worked as a deck officer onboard a ship, our daily tasks were operational—we transported cargo continuously, without interruption. Operations are important, but they quickly become monotonous because they&#39;re an endless cycle.&lt;/p&gt;
+&lt;p&gt;This is exactly why &lt;strong&gt;companies launch projects—to move forward&lt;/strong&gt;. Projects create something new, drive change within the company, and secure its future. They are ways to explore new opportunities and adapt to market shifts. Operations, meanwhile, provide stable income that finances projects.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Consider Kodak&lt;/strong&gt;: for a long time, Kodak was the global leader in photographic film and cameras. However, when digital photography emerged, Kodak &lt;strong&gt;overly focused on its ongoing operations&lt;/strong&gt;—film production. Kodak&#39;s leadership didn’t launch substantial projects to develop digital technologies, failing to see the urgency. They overly trusted the stability of their operations and missed the opportunity to lead the digital market. By the time Kodak finally realized the necessity of change, it was already too late. &lt;strong&gt;Kodak lost most of its market share&lt;/strong&gt; and eventually went bankrupt.&lt;/p&gt;
+&lt;p&gt;Today, with technology evolving at incredible speeds (especially due to artificial intelligence), launching projects has become much easier. Tasks that previously required entire teams can now be handled by a single individual. However, this creates a new challenge—the risk of chaos. This is where the role of a project manager becomes crucial. Project managers help clearly define goals, evaluate the potential of ideas, and manage priorities effectively.&lt;/p&gt;
+&lt;p&gt;From my own experience onboard ships, &lt;strong&gt;projects provided the greatest sense of purpose&lt;/strong&gt;. Whether it was completely updating documentation or overhauling ventilation systems, these projects brought motivation and satisfaction. In such moments, you feel you&#39;re doing something meaningful and valuable.&lt;/p&gt;
+&lt;p&gt;In summary, &lt;strong&gt;companies launch projects to grow, respond to changes, and maintain their competitive edge&lt;/strong&gt;. Often, people don&#39;t fully grasp why they need projects or why they should learn project management. But properly organized projects are vital tools for business survival and success in the modern world. So, if you want not just to sustain but also to develop your business, &lt;strong&gt;you simply can’t avoid projects&lt;/strong&gt;. Initiate projects—they are the driving force that moves your company forward.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 09 Mar 2025 24:00:00 GMT</pubDate>
+      <dc:creator>Tim</dc:creator>
+      <guid>https://buiadzhi.com/posts/2025-03-09_project-management_why-do-we-need-projects-at-all/</guid>
+    </item>
+    <item>
+      <title>Why Most Documentation is Useless—And How to Fix It</title>
+      <link>https://buiadzhi.com/why-most-documentation-is-useless/</link>
+      <description>&lt;h1&gt;&lt;strong&gt;The Documentation Paradox&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;Most documentation is useless. Not because no one reads it—though that&#39;s true—but because it doesn&#39;t actually help.&lt;/p&gt;
+&lt;p&gt;Documentation&#39;s whole purpose is to help teams align. But what usually happens instead? Either there&#39;s way too much documentation, and everyone ignores it, or there&#39;s almost none, and the same questions pop up again and again. Both extremes have the same flaw: they fail to create a shared understanding.&lt;/p&gt;
+&lt;p&gt;The irony here is that teams think they&#39;re solving a problem with documentation, but often they&#39;re creating new ones instead.&lt;/p&gt;
+&lt;h1&gt;&lt;strong&gt;The Two Ways Documentation Fails&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;Most teams swing to one of two extremes, each problematic in its own way:&lt;/p&gt;
+&lt;h2&gt;1. Bloated Documentation: When More is Less&lt;/h2&gt;
+&lt;p&gt;Some teams believe clarity comes from covering every tiny detail. They produce huge wikis, endless process documents, and meticulous reports. But here&#39;s the thing: nobody reads them.&lt;/p&gt;
+&lt;p&gt;Why? Because dense documents are intimidating. When faced with a long wall of text, most people skim, ignore, or abandon them entirely. Too much information also means it&#39;s hard to find what actually matters, and when documentation inevitably becomes outdated, people rely on incorrect info—which is worse than none at all.&lt;/p&gt;
+&lt;p&gt;Worst of all, this massive documentation creates a false sense of security. Teams assume they&#39;ve &amp;quot;covered everything,&amp;quot; but if nobody understands or uses it, the documentation might as well not exist.&lt;/p&gt;
+&lt;h2&gt;2. Missing Documentation: When Knowledge Vanishes&lt;/h2&gt;
+&lt;p&gt;On the other end, some teams try to skip documentation completely. They rely on meetings, Slack messages, or quick hallway chats. At first glance, this seems efficient—writing stuff down takes time, after all. But in the long run, it causes bigger headaches:&lt;/p&gt;
+&lt;p&gt;People forget. Decisions made verbally disappear over time, and teams repeatedly waste effort re-solving old problems. Knowledge gets trapped in silos, with the entire team relying on a handful of &amp;quot;experts.&amp;quot; Onboarding new team members becomes a nightmare—they interrupt others constantly for basic information.&lt;/p&gt;
+&lt;p&gt;The ultimate disaster hits when someone key leaves. Suddenly, entire processes vanish, and the team scrambles to piece things back together.&lt;/p&gt;
+&lt;h2&gt;Why Neither Works&lt;/h2&gt;
+&lt;p&gt;Bloated documentation and missing documentation share the same flaw: they fail to create genuine, shared understanding. Good documentation isn&#39;t about recording everything—it&#39;s about making sure people truly understand what matters.&lt;/p&gt;
+&lt;p&gt;Documentation isn&#39;t successful just because it&#39;s written down. It’s successful when people don&#39;t have to ask basic questions again. It’s not about how much you write—it’s about how clearly you align your team&#39;s thinking.&lt;/p&gt;
+&lt;h1&gt;What Actually Makes Documentation Useful?&lt;/h1&gt;
+&lt;p&gt;People assume good documentation is detailed documentation. But the truth is exactly the opposite: &lt;strong&gt;the best documentation is the simplest&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Think about it: if you wrote down every detail of your day, it wouldn&#39;t be clarity—it would be chaos. Documentation works the same way. You don&#39;t want to read a massive manual; you want quick, clear answers to the questions you actually have.&lt;/p&gt;
+&lt;p&gt;Good documentation does three simple things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It’s short.&lt;/strong&gt; If you can say it in half the words, do it. Less clutter means more clarity.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It’s easy to read.&lt;/strong&gt; Use plain, conversational language. The point isn’t to sound smart; it’s to be understood.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It answers real questions.&lt;/strong&gt; Write documentation to solve actual problems your team has, not hypothetical scenarios no one encounters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To know if your documentation is working, just hand it to someone new. If they immediately get it, you’ve done well. If they’re confused or bored, you haven’t.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Documentation Doesn’t Guarantee Understanding&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Another common mistake is thinking documentation alone creates alignment. But writing something down doesn’t guarantee everyone gets it. Misinterpretation is incredibly common—probably more common than you think.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;People see what they want to see.&lt;/strong&gt; Two readers can interpret the same sentence completely differently. Without enough context, misunderstandings multiply.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Always provide context.&lt;/strong&gt; Writing “We chose option A” isn’t helpful unless readers know why you chose A over B. Without the &amp;quot;why,&amp;quot; the decision seems arbitrary and might get undone unintentionally later.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Good documentation reduces conversation.&lt;/strong&gt; If you find yourself answering the same questions after writing documentation, it means your documentation isn’t working.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That’s why you don’t need documentation that captures everything—you need documentation that prevents misunderstanding. We call this approach &lt;strong&gt;Minimum Viable Documentation (MVD)&lt;/strong&gt;, and it changes the entire game.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;The Magic of Minimum Viable Documentation (MVD)&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;The idea behind &lt;strong&gt;Minimum Viable Documentation&lt;/strong&gt; is simple: write down the absolute minimum needed to keep everyone aligned—nothing more.&lt;/p&gt;
+&lt;p&gt;It’s like packing for a trip: you don’t take everything you own, just what you&#39;ll actually use. Documentation is the same. You capture only what the team genuinely needs. Not because writing less is a goal in itself, but because unnecessary documentation just adds noise.&lt;/p&gt;
+&lt;p&gt;The best MVD follows three straightforward rules:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Only document the essentials.&lt;/strong&gt; Focus on things your team repeatedly asks about. If it’s rarely needed, leave it out.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Explain why, not just how.&lt;/strong&gt; Understanding the reasoning behind decisions prevents future confusion and redundant debates.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Make it actionable.&lt;/strong&gt; Every piece of documentation should help someone do their job immediately—if it doesn&#39;t, it&#39;s clutter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The point of MVD isn’t laziness—it’s efficiency. You cut out what&#39;s unnecessary so people actually use and benefit from what&#39;s left.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Don&#39;t Repeat Yourself (DRY)—Especially in Documentation&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Borrowing wisdom from software developers, good documentation also follows the &lt;strong&gt;DRY principle&lt;/strong&gt;—Don&#39;t Repeat Yourself.&lt;/p&gt;
+&lt;p&gt;If you notice the same question coming up repeatedly, that&#39;s a sign to document it. But once documented, don’t write it again somewhere else. Multiple versions of the same information just create confusion about which is correct.&lt;/p&gt;
+&lt;p&gt;Good documentation practices DRY by:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Answering frequent questions clearly—once.&lt;/strong&gt; If someone asks the same thing twice, write it down.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Avoiding redundant sources.&lt;/strong&gt; Having three documents saying slightly different things leads to chaos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Keeping it lean.&lt;/strong&gt; Short, clear documents get read and used; long documents get ignored.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The goal isn&#39;t fewer documents just for the sake of fewer documents. The goal is fewer, better documents—ones that actually help people work smarter.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;The PMBOK Problem: Ignoring It Doesn’t Make It Go Away&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Project managers often roll their eyes at PMBOK documentation. It seems unnecessarily detailed and overly formal, especially in agile teams. And they&#39;re partly right: writing lengthy process guides for every tiny detail isn&#39;t practical—or even useful.&lt;/p&gt;
+&lt;p&gt;But there&#39;s a twist: &lt;strong&gt;even if you don’t write it down, the underlying PMBOK concepts are still there.&lt;/strong&gt; Every project deals with risks, stakeholders, scope creep, communications, and procurement—whether or not anyone bothers to document them formally.&lt;/p&gt;
+&lt;p&gt;That&#39;s why good project managers keep at least a short, informal note about each critical area, even on agile teams. Think of it as minimal insurance against forgetting something important:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Risks:&lt;/strong&gt; Quickly note what risks you&#39;ve identified and how you&#39;ll handle them.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stakeholders:&lt;/strong&gt; Jot down who needs regular updates and what they care most about.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scope changes:&lt;/strong&gt; Briefly record why certain decisions or trade-offs were made.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You don’t need a giant manual for this. Half a page is usually enough to avoid disaster.&lt;/p&gt;
+&lt;p&gt;This is exactly what MVD looks like in practice: just enough PMBOK-style documentation to be useful, without drowning the team in paperwork.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Agile Means Up-to-Date, Not Undocumented&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;One of agile’s golden rules is that outdated documentation is worse than none at all. Why? Because stale documentation leads teams to confidently make the wrong decisions.&lt;/p&gt;
+&lt;p&gt;In agile, documentation must evolve with the project itself. It’s a living thing, not something written once and forgotten:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Keep it fresh.&lt;/strong&gt; If you haven’t updated a document in months, it&#39;s probably obsolete or useless.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Review often, revise regularly.&lt;/strong&gt; Treat documentation like code—it needs refactoring as projects change.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integrate documentation into your workflow.&lt;/strong&gt; Mention updates in stand-ups, adjust documents in retrospectives, and regularly prune out-of-date information.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Agile teams don’t skip documentation—they keep it alive and lean. Good documentation adapts to reality rather than pretending reality hasn&#39;t changed.&lt;/p&gt;
+&lt;h1&gt;Documentation as an Onboarding Tool&lt;/h1&gt;
+&lt;p&gt;People assume onboarding fails because new hires lack skills. Usually, that&#39;s not true. More often, new hires struggle because they lack context.&lt;/p&gt;
+&lt;p&gt;When you join a new team, you don&#39;t just need instructions—you need a mental map of how the team thinks, why decisions were made, and what hidden pitfalls to avoid. Experienced team members already have this map in their heads. Newcomers don’t, and without it, they&#39;re stuck interrupting others or slowly figuring things out on their own.&lt;/p&gt;
+&lt;p&gt;That&#39;s why onboarding documentation is critical—but only if it&#39;s done right:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Start small.&lt;/strong&gt; Don’t overwhelm people with every detail at once. Give them what they need for their first week, then the first month, then the first quarter.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Explain the important decisions.&lt;/strong&gt; Tell them the mistakes you&#39;ve made, what you&#39;ve learned, and how key decisions were reached.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Make it easy to find.&lt;/strong&gt; If documentation is buried or hard to access, you might as well not have it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Onboarding documentation shouldn’t be a history textbook—it should be more like a survival guide.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Knowledge Retention: How to Stop Losing Lessons Learned&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Most teams don&#39;t realize they have a documentation problem until someone important leaves. Suddenly, valuable knowledge disappears overnight.&lt;/p&gt;
+&lt;p&gt;When experienced people leave, they don&#39;t just take their work with them—they take the context behind decisions, hidden knowledge, and unwritten processes. Without effective documentation, future team members waste enormous time relearning what was once common knowledge.&lt;/p&gt;
+&lt;p&gt;Good documentation helps teams remember what&#39;s important:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Document the reasoning behind key decisions&lt;/strong&gt;, so new people don’t repeat old mistakes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Capture critical processes&lt;/strong&gt;, so they don’t vanish along with an individual employee.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Preserve just enough knowledge to maintain clarity&lt;/strong&gt;, without turning documentation into an overwhelming burden.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This isn&#39;t just about efficiency—it&#39;s about resilience. Teams that document well grow stronger over time, while teams that don&#39;t find themselves constantly reinventing the wheel.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Conclusion: Write Less, Align More&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Most documentation is ignored because it’s overwhelming, outdated, or irrelevant. It becomes digital clutter that people avoid—like a messy garage no one wants to clean.&lt;/p&gt;
+&lt;p&gt;But good documentation isn’t clutter. It’s a tool that helps teams think clearly. It&#39;s about writing just enough to ensure everyone’s on the same page. The goal isn&#39;t to capture every tiny detail; the goal is clarity, alignment, and usefulness.&lt;/p&gt;
+&lt;p&gt;Bad documentation creates noise. Good documentation eliminates confusion.&lt;/p&gt;
+&lt;p&gt;In other words: don’t write more. Write better.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 09 Mar 2025 24:00:00 GMT</pubDate>
+      <dc:creator>Tim</dc:creator>
+      <guid>https://buiadzhi.com/why-most-documentation-is-useless/</guid>
+    </item>
+  </channel>
+</rss>
