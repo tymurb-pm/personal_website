@@ -3,62 +3,48 @@ title: "Home"
 layout: "base.njk"
 ---
 
-<section class="flex flex-col md:flex-row items-center justify-center min-h-[60vh] md:min-h-[75vh] bg-gray-100 p-6">
-    <!-- Left Side: Profile Photo -->
-    <div class="w-80 h-auto md:w-96">
-        <img src="/images/profile.jpg" alt="Tymur Buiadzhi" 
-            class="w-full h-auto rounded-lg shadow-xl">
+<!-- Hero Section -->
+<section class="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gray-100 p-6">
+    <!-- Profile Photo -->
+    <div class="max-w-md md:max-w-lg">
+        <img src="/images/profile.jpg" alt="Tymur Buiadzhi" class="w-full rounded-lg shadow-xl">
     </div>
 
-    <!-- Right Side: Info & Buttons -->
-    <div class="ml-0 md:ml-12 text-center md:text-left">
+    <!-- Info & Buttons -->
+    <div class="md:ml-12 text-center md:text-left">
         <h1 class="text-5xl font-extrabold text-gray-800 leading-tight">Tymur Buiadzhi</h1>
         <p class="text-xl text-gray-700 mt-2 flex items-center justify-center md:justify-start">
             <span class="mr-2 text-2xl">💼</span> IT Project Manager at MTrading
         </p>
-        <p class="text-lg text-gray-600 italic mt-2 mb-4">"Passionate about building and managing digital products"</p>
+        <p class="text-lg text-gray-600 italic mt-2 mb-4 leading-relaxed">
+            "Passionate about building and managing digital products"
+        </p>
 
         <!-- Buttons -->
-<div class="mt-4 flex justify-center md:justify-start space-x-4">
-    <a href="/blog/" 
-       class="relative bg-blue-500 text-white text-lg px-8 py-4 rounded-lg shadow-lg hover:bg-blue-600 hover:shadow-xl transform transition-all duration-200 ease-in-out hover:scale-105 active:scale-95">
-        Read My Blog
-    </a>
-
-    <a href="/cv/" 
-       class="relative bg-green-500 text-white text-lg px-8 py-4 rounded-lg shadow-lg hover:bg-green-600 hover:shadow-xl transform transition-all duration-200 ease-in-out hover:scale-105 active:scale-95">
-        Check My CV
-    </a>
-</div>
-
-
+        <div class="mt-4 flex justify-center md:justify-start space-x-4">
+            <a href="/blog/" class="relative text-white text-lg px-8 py-4 rounded-lg shadow-lg transform transition-all duration-200 ease-in-out hover:shadow-xl hover:scale-105 active:scale-95 bg-blue-500 hover:bg-blue-600">
+                Read My Blog
+            </a>
+            <a href="/cv/" class="relative text-white text-lg px-8 py-4 rounded-lg shadow-lg transform transition-all duration-200 ease-in-out hover:shadow-xl hover:scale-105 active:scale-95 bg-green-500 hover:bg-green-600">
+                Check My CV
+            </a>
+        </div>
     </div>
 </section>
 
 <!-- About Me Section -->
-<section class="max-w-4xl mx-auto text-left mt-12 p-6">
+<section class="max-w-4xl mx-auto mt-12 p-6">
     <h2 class="text-3xl font-semibold text-gray-800">About Me</h2>
-    <p class="text-lg text-gray-700 mt-4">
-      I'm Tymur, a Junior IT Project Manager on an exciting journey—from
-      navigating chemical tankers across the oceans to exploring the dynamic
-      world of technology. My maritime background equipped me with resilience,
-      calmness under pressure, and strong communication skills, which now help 
-      me manage IT projects effectively.
+    <p class="text-lg text-gray-700 mt-4 leading-relaxed">
+        I'm Tymur, a Junior IT Project Manager on an exciting journey—from navigating chemical tankers across the oceans to exploring the dynamic world of technology.
     </p>
-    <p class="text-lg text-gray-700 mt-4">
-       Currently, I'm gaining valuable experience managing software projects in fintech 
-       and gaming. I'm passionate about learning new technologies and methodologies, 
-       constantly seeking opportunities to grow my skill set and knowledge.
+    <p class="text-lg text-gray-700 mt-4 leading-relaxed">
+        Currently, I'm gaining valuable experience managing software projects in fintech and gaming, continuously expanding my skills and knowledge.
     </p>
-    <p class="text-lg text-gray-700 mt-4">
-       This website is a part of my hobby—exploring and learning about new technologies 
-       and sharing my experiences and insights. I enjoy writing about my journey, the 
-       lessons I’ve learned, and the trends I discover. Additionally, I've created a 
-       community for project managers where we can learn, network, and grow together.
+    <p class="text-lg text-gray-700 mt-4 leading-relaxed">
+        This website is a part of my hobby—exploring and learning about new technologies, sharing my experiences, and fostering a project management community.
     </p>
-    <p class="text-lg text-gray-700 mt-4">
-    Feel free to connect—I'm always open to interesting conversations, collaboration 
-    opportunities, or just exchanging ideas!
+    <p class="text-lg text-gray-700 mt-4 leading-relaxed">
+        Feel free to connect—I’m always open to interesting conversations, collaborations, or exchanging ideas!
     </p>
 </section>
-
