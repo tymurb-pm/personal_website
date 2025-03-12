@@ -1,7 +1,7 @@
 ---
 title: "Is There Life Beyond Tuckman?"
 date: 2025-01-24
-tags: [Project Management]
+category: "Project Management"
 layout: "post.njk"
 ---
 

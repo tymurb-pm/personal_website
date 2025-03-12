@@ -1,165 +1,167 @@
-  <style>
-    /* Ensure body padding dynamically adjusts to navbar height */
-    body {
-      padding-top: 64px;
-    }
+ <style>
+     /* Ensure body padding dynamically adjusts to navbar height */
+     body {
+       padding-top: 64px;
+     }
+ 
+     /* Navbar styles */
+     #navbar {
+       height: 64px;
+       transition: transform 0.5s ease, opacity 0.3s ease-in;
+     }
+ 
+     /* Navigation link styles */
+     #navbar .nav-link {
+      color: #333;
+       position: relative;
+       transition: color 0.3s ease-in-out;
+     }
+ 
+     /* Underline effect for navigation links */
+     #navbar .nav-link::after {
+       content: "";
+       position: absolute;
+       left: 0;
+       bottom: -2px;
+       width: 100%;
+       height: 2px;
+       background-color: currentColor;
+       transform: scaleX(0);
+       transform-origin: center;
+       transition: transform 0.3s ease-in-out;
+     }
+ 
+     /* Expand underline on hover and active links */
+     #navbar .nav-link:hover::after,
+     .active-link::after {
+       transform: scaleX(1);
+     }
+ 
+     /* Mobile menu dropdown (hidden by default) */
+     #mobile-menu-dropdown {
+       display: none;
+       opacity: 0;
+       pointer-events: none;
+       transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+       visibility: hidden;
+     }
+ 
+     /* Show mobile menu when active */
+     #mobile-menu-dropdown.open {
+       display: block;
+       opacity: 1;
+       pointer-events: auto;
+       visibility: visible;
+     }
+ 
+     /* Fixed navbar styling */
+     .fixed {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       background-color: white;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       z-index: 1000;
+     }
+   </style>
+ </head>
+ <body>
+ 
+   <header id="navbar" class="fixed">
+     <nav class="max-w-4xl mx-auto flex justify-between items-center p-4">
+       <!-- Logo / Branding -->
+       <a href="/" class="text-xl font-bold text-gray-800">Tymur Buiadzhi</a>
+       
+       <!-- Mobile Menu Button -->
+       <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-expanded="false">
+         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+         </svg>
+       </button>
+ 
+       <!-- Desktop Navigation Menu -->
+       <div id="desktop-menu" class="hidden md:flex space-x-8">
+         <a href="/" class="nav-link text-gray-600 hover:text-gray-900">Home</a>
+         <a href="/blog/" class="nav-link text-gray-600 hover:text-gray-900">Blog</a>
+         <a href="/cv/" class="nav-link text-gray-600 hover:text-gray-900">CV</a>
+         <a href="/contact-page/" class="nav-link text-gray-600 hover:text-gray-900">Contact</a>
+       </div>
+     </nav>
+         <!-- Mobile Navigation Dropdown -->
+     <div id="mobile-menu-dropdown" class="md:hidden bg-white shadow-md">
+       <a href="/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Home</a>
+       <a href="/blog/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Blog</a>
+       <a href="/cv/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">CV</a>
+       <a href="/contact-page/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Contact</a>
+     </div>
+      </header>
+ 
+   <script>
+     // Select necessary elements
+     const navbar = document.getElementById("navbar");
+     const mobileMenuDropdown = document.getElementById("mobile-menu-dropdown");
+     const mobileMenuButton = document.getElementById("mobile-menu-button");
+ 
+     let lastScrollY = window.scrollY; // Track last scroll position
+     let isScrollingDown = false; // Track scroll direction
+     let ticking = false; // Prevent excessive scroll event calls
+ 
+     /**
+      * Handles navbar visibility on scroll.
+      * Uses requestAnimationFrame to optimize performance.
+      */
+     function handleScroll() {
+       if (ticking) return;
+       ticking = true; // Prevent redundant execution
+ 
+       window.requestAnimationFrame(() => {
+         const currentScrollY = window.scrollY;
+         const isDown = currentScrollY > lastScrollY;
+ 
+         // Hide navbar when scrolling down, show when scrolling up
+         if (isDown !== isScrollingDown) {
+           navbar.style.transform = isDown ? "translateY(-100%)" : "translateY(0)";
+           isScrollingDown = isDown;
+         }
+ 
+         lastScrollY = currentScrollY;
+         ticking = false; // Allow next execution
+       });
+     }
+      /**
+      * Toggles the mobile menu visibility and updates accessibility attributes.
+      */
+     function toggleMobileMenu() {
+       const isOpen = mobileMenuDropdown.classList.toggle("open");
+       mobileMenuButton.setAttribute("aria-expanded", isOpen);
+     }
 
-    /* Navbar styles */
-    #navbar {
-      height: 64px;
-      transition: transform 0.5s ease, opacity 0.3s ease-in;
-    }
-
-    /* Navigation link styles */
-    .nav-link {
-      position: relative;
-      transition: color 0.3s ease-in-out;
-    }
-
-    /* Underline effect for navigation links */
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -2px;
-      width: 100%;
-      height: 2px;
-      background-color: currentColor;
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    /* Expand underline on hover and active links */
-    .nav-link:hover::after,
-    .active-link::after {
-      transform: scaleX(1);
-    }
-
-    /* Mobile menu dropdown (hidden by default) */
-    #mobile-menu-dropdown {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-      visibility: hidden;
-    }
-
-    /* Show mobile menu when active */
-    #mobile-menu-dropdown.open {
-      opacity: 1;
-      pointer-events: auto;
-      visibility: visible;
-    }
-
-    /* Fixed navbar styling */
-    .fixed {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: white;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      z-index: 10000 !important;
-      transform: translateY(0) !important; /* Ensure navbar is always visible */
-    }
-  </style>
-</head>
-<body>
-
-  <header id="navbar" class="fixed">
-    <nav class="max-w-4xl mx-auto flex justify-between items-center p-4">
-      <!-- Logo / Branding -->
-      <a href="/" class="text-xl font-bold text-gray-800">Tymur Buiadzhi</a>
-      
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-expanded="false">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-
-      <!-- Desktop Navigation Menu -->
-      <div id="desktop-menu" class="hidden md:flex space-x-8">
-        <a href="/" class="nav-link text-gray-600 hover:text-gray-900">Home</a>
-        <a href="/blog/" class="nav-link text-gray-600 hover:text-gray-900">Blog</a>
-        <a href="/cv/" class="nav-link text-gray-600 hover:text-gray-900">CV</a>
-        <a href="/contact-page/" class="nav-link text-gray-600 hover:text-gray-900">Contact</a>
-      </div>
-    </nav>
-    
-    <!-- Mobile Navigation Dropdown -->
-    <div id="mobile-menu-dropdown" class="md:hidden bg-white shadow-md">
-      <a href="/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Home</a>
-      <a href="/blog/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Blog</a>
-      <a href="/cv/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">CV</a>
-      <a href="/contact-page/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Contact</a>
-    </div>
-  </header>
-
-  <script>
-    // Select necessary elements
-    const navbar = document.getElementById("navbar");
-    const mobileMenuDropdown = document.getElementById("mobile-menu-dropdown");
-    const mobileMenuButton = document.getElementById("mobile-menu-button");
-
-    let lastScrollY = window.scrollY; // Track last scroll position
-    let isScrollingDown = false; // Track scroll direction
-    let ticking = false; // Prevent excessive scroll event calls
-
-    /**
-     * Handles navbar visibility on scroll.
-     * Uses requestAnimationFrame to optimize performance.
-     */
-    function handleScroll() {
-      if (ticking) return;
-      ticking = true; // Prevent redundant execution
-
-      window.requestAnimationFrame(() => {
-        const currentScrollY = window.scrollY;
-        const isDown = currentScrollY > lastScrollY;
-
-        // Hide navbar when scrolling down, show when scrolling up
-        if (isDown !== isScrollingDown) {
-          navbar.style.transform = isDown ? "translateY(-100%)" : "translateY(0)";
-          isScrollingDown = isDown;
-        }
-
-        lastScrollY = currentScrollY;
-        ticking = false; // Allow next execution
-      });
-    }
-
-    /**
-     * Toggles the mobile menu visibility and updates accessibility attributes.
-     */
-    function toggleMobileMenu() {
-      const isOpen = mobileMenuDropdown.classList.toggle("open");
-      mobileMenuButton.setAttribute("aria-expanded", isOpen);
-    }
-
-    /**
-     * Highlights the active navigation link based on the current URL.
-     */
-    function updateActiveLinks() {
-      const currentPath = window.location.pathname;
-
-      document.querySelectorAll(".nav-link").forEach(link => {
-        // Normalize URLs to handle query parameters and hash fragments
+      /**
+      * Highlights the active navigation link based on the current URL.
+      */
+     function updateActiveLinks() {
+    const currentPath = window.location.pathname;
+    document.querySelectorAll(".nav-link").forEach(link => {
         const linkPath = new URL(link.href, window.location.origin).pathname;
-        link.classList.toggle("active-link", currentPath.startsWith(linkPath));
-      });
-    }
+        if (currentPath === linkPath || (currentPath.startsWith(linkPath) && linkPath !== "/")) {
+            link.classList.add("active-link");
+        } else {
+            link.classList.remove("active-link");
+        }
+    });
+}
 
-    // Event Listeners
-    window.addEventListener("scroll", handleScroll);
-    mobileMenuButton.addEventListener("click", toggleMobileMenu);
-
-    // Hide mobile menu on window resize (for responsiveness)
-    window.addEventListener("resize", () => mobileMenuDropdown.classList.remove("open"));
-
-    // Set active link on page load
-    document.addEventListener("DOMContentLoaded", updateActiveLinks);
-  </script>
-
-</body>
-</html>
+     // Event Listeners
+     window.addEventListener("scroll", handleScroll);
+     mobileMenuButton.addEventListener("click", toggleMobileMenu);
+ 
+     // Hide mobile menu on window resize (for responsiveness)
+     window.addEventListener("resize", () => mobileMenuDropdown.classList.remove("open"));
+ 
+     // Set active link on page load
+     document.addEventListener("DOMContentLoaded", updateActiveLinks);
+   </script>
+ 
+ </body>
+ </html>

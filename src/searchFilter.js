@@ -10,16 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
         posts.forEach(post => {
             let title = post.dataset.title.toLowerCase();
             let content = post.dataset.content.toLowerCase();
-            let category = post.dataset.category.toLowerCase();
+            let category = post.dataset.category.toLowerCase(); // Use category field
 
             let matchesSearch = title.includes(searchText) || content.includes(searchText);
-            let matchesCategory = (activeCategory === "all" || category.includes(activeCategory.toLowerCase()));
+            let matchesCategory = (activeCategory === "all" || category === activeCategory.toLowerCase());
 
-            if (matchesSearch && matchesCategory) {
-                post.style.display = "block";
-            } else {
-                post.style.display = "none";
-            }
+            post.style.display = (matchesSearch && matchesCategory) ? "block" : "none";
         });
     }
 

@@ -1,7 +1,7 @@
 ---
 title: "Care as a Leader’s Core Virtue"
 date: 2025-02-04
-tags: [Project Management]
+category: "Project Management"
 layout: "post.njk"
 ---
 Managerial roles vary widely, as do their responsibilities. However, there's a common trait uniting all leaders: the responsibility to support and develop their subordinates.

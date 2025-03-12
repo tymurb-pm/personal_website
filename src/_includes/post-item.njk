@@ -1,7 +1,7 @@
 <li class="bg-white p-4 sm:p-6 shadow rounded-lg post-item" 
     data-title="{{ post.data.title }}" 
     data-content="{{ post.templateContent | striptags }}" 
-    data-category="{{ post.data.tags | join(' ') }}">
+    data-category="{{ post.data.category }}">
 
     <a href="{{ post.url }}" class="text-xl sm:text-2xl font-bold text-blue-600 hover:underline block">
         {{ post.data.title }}

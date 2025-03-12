@@ -1,7 +1,7 @@
 ---
 title: "Why Do We Need Projects at All?"
 date: 2025-03-09
-tags: [Project Management]
+category: "Project Management"
 layout: "post.njk"
 pageType: "post"
 ---

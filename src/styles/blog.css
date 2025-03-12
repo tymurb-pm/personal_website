@@ -53,51 +53,51 @@ body {
 }
 
 /* ========== Typography ========== */
-h1, h2, h3, h4 {
+.post-wrapper h1, h2, h3, h4 {
     font-weight: bold;
 }
 
-h1 {
-    font-size: 2.4rem;
-    margin-bottom: 24px;
+.post-wrapper h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
     line-height: 1.2;
 }
 
-h2 {
+.post-wrapper h2 {
     font-size: 2rem;
-    margin: 48px 0 16px;
+    margin: 15px 0 16px;
     color: var(--text-primary);
 }
 
-h3 {
+.post-wrapper h3 {
     font-size: 1.6rem;
     margin: 32px 0 12px;
 }
 
-h4 {
+.post-wrapper h4 {
     font-size: 1.4rem;
     margin: 32px 0 12px;
 }
 
-p {
+.post-wrapper p {
     font-size: 1.15rem;
     margin-bottom: 24px;
     max-width: 75ch;
 }
 
 /* ========== Links ========== */
-a {
+.post-wrapper a {
     color: var(--accent-color);
     text-decoration: none;
     transition: color 0.2s;
 }
 
-a:hover {
+.post-wrapper a:hover {
     text-decoration: underline;
 }
 
 /* ========== Blockquotes ========== */
-blockquote {
+.post-wrapper blockquote {
     border-left: 4px solid var(--accent-color);
     padding: 12px 16px;
     margin: 24px 0;
@@ -105,14 +105,14 @@ blockquote {
     border-radius: 0 4px 4px 0;
 }
 
-blockquote p {
+.post-wrapper blockquote p {
     font-style: italic;
     color: var(--text-secondary);
     margin-bottom: 0;
 }
 
 /* ========== Code Styling ========== */
-pre {
+.post-wrapper pre {
     background: var(--code-background);
     padding: 16px;
     border-radius: 6px;
@@ -122,7 +122,7 @@ pre {
     border: 1px solid var(--border-color);
 }
 
-code {
+.post-wrapper code {
     background: var(--code-background);
     padding: 2px 6px;
     border-radius: 4px;
@@ -131,31 +131,31 @@ code {
 }
 
 /* ========== Lists ========== */
-ul, ol {
+.post-wrapper ul, ol {
     margin: 20px 0;
     padding-left: 20px;
 }
 
-li {
+.post-wrapper li {
     margin-bottom: 10px;
     font-size: 1.15rem;
 }
 
-ul { list-style-type: disc; }
-ul ul { list-style-type: circle; }
-ul ul ul { list-style-type: square; }
+.post-wrapper ul { list-style-type: disc; }
+.post-wrapper ul ul { list-style-type: circle; }
+.post-wrapper ul ul ul { list-style-type: square; }
 
-ol { list-style-type: decimal; }
-ol ol { list-style-type: lower-alpha; }
-ol ol ol { list-style-type: lower-roman; }
+.post-wrapper ol { list-style-type: decimal; }
+.post-wrapper ol ol { list-style-type: lower-alpha; }
+.post-wrapper ol ol ol { list-style-type: lower-roman; }
 
-li::marker {
+.post-wrapper li::marker {
     color: #005aba;
     font-weight: bold;
 }
 
 /* ========== Meta Information ========== */
-.meta {
+.post-wrapper .meta {
     color: var(--text-muted);
     font-size: 1rem;
     margin-bottom: 24px;
@@ -165,7 +165,7 @@ li::marker {
 }
 
 /* ========== Back to Blog Link ========== */
-.back-link {
+.post-wrapper .back-link {
     display: inline-flex;
     align-items: center;
     gap: 2px;
@@ -181,26 +181,26 @@ li::marker {
     margin-bottom: 16px;
 }
 
-.back-link:hover {
+.post-wrapper .back-link:hover {
     background-color: #007bff;
     color: white;
     box-shadow: 0px 3px 6px rgba(0, 123, 255, 0.2);
 }
 
-.back-link svg {
+.post-wrapper .back-link svg {
     width: 14px;
     height: 14px;
 }
 
 /* ========== Tags ========== */
-.tags {
+.post-wrapper .tags {
     margin-top: 36px;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
 
-.tag {
+.post-wrapper .tag {
     background: #f3f4f6;
     padding: 6px 12px;
     border-radius: 20px;
@@ -210,7 +210,7 @@ li::marker {
 }
 
 /* ========== Responsive Image Handling ========== */
-img {
+.post-wrapper img {
     max-width: 100%;
     height: auto;
     border-radius: 6px;
