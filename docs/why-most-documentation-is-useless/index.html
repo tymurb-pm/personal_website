@@ -11,46 +11,54 @@
         <link rel="stylesheet" href="/styles/blog.css">
     
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
      <style>
      /* Ensure body padding dynamically adjusts to navbar height */
      body {
        padding-top: 64px;
      }
  
-     /* Navbar styles */
-     #navbar {
-       height: 64px;
-       transition: transform 0.5s ease, opacity 0.3s ease-in;
-     }
- 
-     /* Navigation link styles */
-     #navbar .nav-link {
-      color: #333;
-       position: relative;
-       transition: color 0.3s ease-in-out;
-     }
- 
-     /* Underline effect for navigation links */
-     #navbar .nav-link::after {
-       content: "";
-       position: absolute;
-       left: 0;
-       bottom: -2px;
-       width: 100%;
-       height: 2px;
-       background-color: currentColor;
-       transform: scaleX(0);
-       transform-origin: center;
-       transition: transform 0.3s ease-in-out;
-     }
- 
-     /* Expand underline on hover and active links */
-     #navbar .nav-link:hover::after,
-     .active-link::after {
-       transform: scaleX(1);
-     }
- 
+/* Navigation link styles */
+#navbar .nav-link {
+  color: #333;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+/* Underline effect for navigation links */
+#navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Animate underline only for non-active links on hover */
+#navbar .nav-link:hover:not(.active-link)::after {
+  transform: scaleX(1);
+}
+
+/* Ensure active links are always underlined without animation */
+#navbar .nav-link.active-link::after {
+  transform: scaleX(1);
+  transition: none; /* No animation for active links */
+}
+
+/* Ensure active links are visually distinct */
+#navbar .nav-link.active-link {
+  color: #000; /* Darker text for active links */
+  font-weight: 600;
+}
+
+
+
      /* Mobile menu dropdown (hidden by default) */
      #mobile-menu-dropdown {
        display: none;
@@ -175,12 +183,24 @@
  
      // Set active link on page load
      document.addEventListener("DOMContentLoaded", updateActiveLinks);
+    document.addEventListener("DOMContentLoaded", function () {
+    const currentPath = window.location.pathname;
+    document.querySelectorAll(".nav-link").forEach(link => {
+        const linkPath = new URL(link.href, window.location.origin).pathname;
+        if (currentPath === linkPath || (currentPath.startsWith(linkPath) && linkPath !== "/")) {
+            link.classList.add("active-link");
+        } else {
+            link.classList.remove("active-link");
+        }
+    });
+});
+
    </script>
  
  </body>
  </html>
 
-<main class="max-w-4xl mx-auto p-4 sm:p-6">
+<main class="flex-grow max-w-4xl mx-auto p-4 sm:p-6 w-full">
     
 <div class="post-wrapper">
    <a href="/blog" class="back-link">
