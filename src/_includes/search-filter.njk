@@ -11,7 +11,7 @@
       {% for category in categories %}
         <button 
           class="category-filter bg-{{ colors[category] }}-500 text-white hover:bg-{{ colors[category] }}-600 transition-colors duration-300 px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap"
-          data-category="{{ category | lower }}">
+          data-category="{{ category }}">
           {{ category | capitalize }}
         </button>
       {% endfor %}
@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
 
 <style>
 /* Concave active filter styling (pressed-in look) */

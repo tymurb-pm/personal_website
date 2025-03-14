@@ -1,12 +1,17 @@
 ---
 title: "Why Most Documentation is Useless—And How to Fix It"
 permalink: "/why-most-documentation-is-useless/"
-date: 2025-03-09
-category: "Project Management"
-tags: [Documentation, MVD]
+date: 2025-03-12T12:00:00Z
+categories: ["Project Management"]
+tags: ["Documentation", "MVD", "Agile", "Knowledge Management"]
 layout: "post.njk"
 pageType: "post"
+excerpt: "Most documentation is bloated, unreadable, and ignored. Learn how to write lean, useful documentation that actually helps teams align."
+description: "Most documentation fails because it’s either too much or too little. Discover the Minimum Viable Documentation (MVD) approach to creating documentation that gets read and used."
+canonical_url: "https://buiadzhi.com.com/why-most-documentation-is-useless/"
+og_type: "article"
 ---
+
 
 # **The Documentation Paradox**
 

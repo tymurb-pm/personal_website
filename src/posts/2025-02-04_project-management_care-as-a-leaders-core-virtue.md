@@ -1,9 +1,17 @@
 ---
 title: "Care as a Leader’s Core Virtue"
-date: 2025-02-04
-category: "Project Management"
+permalink: "/care-as-a-leaders-core-virtue/"
+date: 2025-02-04T12:00:00Z
+categories: ["Project Management"]
+tags: ["Leadership", "Empathy", "Management", "Team Dynamics"]
 layout: "post.njk"
+pageType: "post"
+excerpt: "Great leadership isn’t just about discipline—it’s about balance. Learn why care and empathy are essential virtues for effective leaders."
+description: "Effective leadership balances discipline and empathy. This article explores real-life examples of how care transforms workplace relationships and team performance."
+canonical_url: "https://buiadzhi.com/care-as-a-leaders-core-virtue/"
+og_type: "article"
 ---
+
 Managerial roles vary widely, as do their responsibilities. However, there's a common trait uniting all leaders: the responsibility to support and develop their subordinates.
 
 Often onboard ships, I've heard officers complain about having to "babysit" grown men. In my opinion, this is a profound misunderstanding. Employees approach their leaders not only because they lack knowledge or experience but because they need support and recognition.

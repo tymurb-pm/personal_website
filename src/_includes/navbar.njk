@@ -106,79 +106,87 @@
       </header>
  
    <script>
-     // Select necessary elements
-     const navbar = document.getElementById("navbar");
-     const mobileMenuDropdown = document.getElementById("mobile-menu-dropdown");
-     const mobileMenuButton = document.getElementById("mobile-menu-button");
- 
-     let lastScrollY = window.scrollY; // Track last scroll position
-     let isScrollingDown = false; // Track scroll direction
-     let ticking = false; // Prevent excessive scroll event calls
- 
-     /**
-      * Handles navbar visibility on scroll.
-      * Uses requestAnimationFrame to optimize performance.
-      */
-     function handleScroll() {
-       if (ticking) return;
-       ticking = true; // Prevent redundant execution
- 
-       window.requestAnimationFrame(() => {
-         const currentScrollY = window.scrollY;
-         const isDown = currentScrollY > lastScrollY;
- 
-         // Hide navbar when scrolling down, show when scrolling up
-         if (isDown !== isScrollingDown) {
-           navbar.style.transform = isDown ? "translateY(-100%)" : "translateY(0)";
-           isScrollingDown = isDown;
-         }
- 
-         lastScrollY = currentScrollY;
-         ticking = false; // Allow next execution
-       });
-     }
-      /**
-      * Toggles the mobile menu visibility and updates accessibility attributes.
-      */
-     function toggleMobileMenu() {
-       const isOpen = mobileMenuDropdown.classList.toggle("open");
-       mobileMenuButton.setAttribute("aria-expanded", isOpen);
-     }
+document.addEventListener("DOMContentLoaded", function () {
+  // Select necessary elements
+  const navbar = document.getElementById("navbar");
+  const mobileMenuDropdown = document.getElementById("mobile-menu-dropdown");
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
 
-      /**
-      * Highlights the active navigation link based on the current URL.
-      */
-     function updateActiveLinks() {
+  let lastScrollY = window.scrollY;
+  let isScrollingDown = false;
+  let ticking = false;
+  let scrollThreshold = 50; // Cumulative scroll before full hide
+  let accumulatedScroll = 0;
+
+  // Add smooth transition effects
+  navbar.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
+
+  /**
+   * Handles navbar visibility with smooth fading and sliding effect.
+   */
+  function handleScroll() {
+    if (ticking) return;
+    ticking = true;
+
+    window.requestAnimationFrame(() => {
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - lastScrollY;
+
+      if (scrollDelta > 0) {
+        // Scrolling down: accumulate distance and gradually hide navbar
+        accumulatedScroll += scrollDelta;
+        let opacityFactor = Math.max(1 - accumulatedScroll / scrollThreshold, 0);
+        navbar.style.opacity = opacityFactor;
+        navbar.style.transform = `translateY(${-accumulatedScroll}px)`;
+
+        if (accumulatedScroll >= scrollThreshold && !isScrollingDown) {
+          isScrollingDown = true;
+        }
+      } else if (scrollDelta < 0) {
+        // Scrolling up: reset accumulated scroll and smoothly show navbar
+        accumulatedScroll = Math.max(accumulatedScroll + scrollDelta, 0);
+        let opacityFactor = Math.max(1 - accumulatedScroll / scrollThreshold, 0);
+        navbar.style.opacity = opacityFactor;
+        navbar.style.transform = `translateY(${-accumulatedScroll}px)`;
+
+        if (isScrollingDown) {
+          isScrollingDown = false;
+        }
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    });
+  }
+
+  /**
+   * Toggles the mobile menu visibility and updates accessibility attributes.
+   */
+  function toggleMobileMenu() {
+    const isOpen = mobileMenuDropdown.classList.toggle("open");
+    mobileMenuButton.setAttribute("aria-expanded", isOpen);
+  }
+
+  /**
+   * Highlights the active navigation link based on the current URL.
+   */
+  function updateActiveLinks() {
     const currentPath = window.location.pathname;
     document.querySelectorAll(".nav-link").forEach(link => {
-        const linkPath = new URL(link.href, window.location.origin).pathname;
-        if (currentPath === linkPath || (currentPath.startsWith(linkPath) && linkPath !== "/")) {
-            link.classList.add("active-link");
-        } else {
-            link.classList.remove("active-link");
-        }
+      const linkPath = new URL(link.href, window.location.origin).pathname;
+      if (currentPath === linkPath || (currentPath.startsWith(linkPath) && linkPath !== "/")) {
+        link.classList.add("active-link");
+      } else {
+        link.classList.remove("active-link");
+      }
     });
-}
+  }
 
-     // Event Listeners
-     window.addEventListener("scroll", handleScroll);
-     mobileMenuButton.addEventListener("click", toggleMobileMenu);
- 
-     // Hide mobile menu on window resize (for responsiveness)
-     window.addEventListener("resize", () => mobileMenuDropdown.classList.remove("open"));
- 
-     // Set active link on page load
-     document.addEventListener("DOMContentLoaded", updateActiveLinks);
-    document.addEventListener("DOMContentLoaded", function () {
-    const currentPath = window.location.pathname;
-    document.querySelectorAll(".nav-link").forEach(link => {
-        const linkPath = new URL(link.href, window.location.origin).pathname;
-        if (currentPath === linkPath || (currentPath.startsWith(linkPath) && linkPath !== "/")) {
-            link.classList.add("active-link");
-        } else {
-            link.classList.remove("active-link");
-        }
-    });
+  // Attach event listeners
+  window.addEventListener("scroll", handleScroll);
+  mobileMenuButton.addEventListener("click", toggleMobileMenu);
+  window.addEventListener("resize", () => mobileMenuDropdown.classList.remove("open"));
+  updateActiveLinks();
 });
 
    </script>
