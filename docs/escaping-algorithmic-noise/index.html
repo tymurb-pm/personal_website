@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Escaping Algorithmic Noise — A Journey to Digital Clarity</title>
     <link rel="stylesheet" href="/styles/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    
+        <link rel="stylesheet" href="/styles/blog.css">
     
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
@@ -208,209 +210,79 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <main class="flex-grow max-w-4xl mx-auto p-4 sm:p-6 w-full">
     
-
-<section class="max-w-4xl mx-auto px-4 sm:px-6 py-6">
-    <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">Blog Posts</h1>
-
-    <!-- Search Bar & Categories -->
-    <div class="flex flex-col space-y-4 mb-6">
-  <!-- Search Bar -->
-  <input type="text" id="search-input" class="border p-3 rounded-lg w-full" placeholder="Search posts...">
-
-  <!-- Categories -->
-  <div class="overflow-x-auto pb-2">
-    <div class="flex space-x-2 min-w-max">
-      
-      
-      
-      
-        <button 
-          class="category-filter bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap"
-          data-category="all">
-          All
-        </button>
-      
-        <button 
-          class="category-filter bg-green-500 text-white hover:bg-green-600 transition-colors duration-300 px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap"
-          data-category="Project Management">
-          Project management
-        </button>
-      
-        <button 
-          class="category-filter bg-red-500 text-white hover:bg-red-600 transition-colors duration-300 px-3 py-2 text-sm sm:text-base sm:px-4 rounded-lg whitespace-nowrap"
-          data-category="Personal">
-          Personal
-        </button>
-      
-    </div>
-  </div>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const categoryButtons = document.querySelectorAll('.category-filter');
-  
-  // Initially mark the "all" filter as active
-  document.querySelector('.category-filter[data-category="all"]').classList.add('active');
-
-  categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Remove active class from all buttons
-      categoryButtons.forEach(btn => btn.classList.remove('active'));
-      
-      // Add active class to the clicked button
-      button.classList.add('active');
-      
-      // Optional: Filter posts based on button.dataset.category
-      console.log("Active filter:", button.dataset.category);
-    });
-  });
-});
-</script>
-
-
-<style>
-/* Concave active filter styling (pressed-in look) */
-.category-filter.active {
-  box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.2),
-              inset -4px -4px 6px rgba(255, 255, 255, 0.2);
-}
-</style>
-
-
-    <!-- Blog Posts List -->
-    <ul id="blog-list" class="space-y-4 sm:space-y-6">
-        
-            <li class="bg-white p-4 sm:p-6 shadow rounded-lg post-item" 
-    data-title="Escaping Algorithmic Noise — A Journey to Digital Clarity" 
-    data-content="The modern internet bombards us with algorithm-driven noise, making us more informed yet less focused. Discover a path to regaining clarity and control over your digital life." 
-    data-category="Personal">
-
-    <a href="/escaping-algorithmic-noise/" class="text-xl sm:text-2xl font-bold text-blue-600 hover:underline block">
-        Escaping Algorithmic Noise — A Journey to Digital Clarity
+<div class="post-wrapper">
+   <a href="/blog" class="back-link">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+       stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 18l-6-6 6-6"/>
+  </svg>
+  Back to Blog
     </a>
 
-    <p class="text-gray-500 text-xs sm:text-sm mt-1">
-        Mar 15, 2025 •
-        3 min read
-    </p>
 
-    <p class="text-gray-700 text-sm sm:text-base mt-2">
-        The modern internet bombards us with algorithm-driven noise, making us more informed yet less focused. Discover a path to regaining clarity and control over your digital life.
-    </p>
-    
-    <a href="/escaping-algorithmic-noise/" class="text-blue-500 hover:underline mt-2 inline-block">Read More</a>
-</li>
-
-        
-            <li class="bg-white p-4 sm:p-6 shadow rounded-lg post-item" 
-    data-title="Why Most Documentation is Useless—And How to Fix It" 
-    data-content="Most documentation is bloated, unreadable, and ignored. Learn how to write lean, useful documentation that actually helps teams align." 
-    data-category="Project Management">
-
-    <a href="/why-most-documentation-is-useless/" class="text-xl sm:text-2xl font-bold text-blue-600 hover:underline block">
-        Why Most Documentation is Useless—And How to Fix It
-    </a>
-
-    <p class="text-gray-500 text-xs sm:text-sm mt-1">
-        Mar 12, 2025 •
-        9 min read
-    </p>
-
-    <p class="text-gray-700 text-sm sm:text-base mt-2">
-        Most documentation is bloated, unreadable, and ignored. Learn how to write lean, useful documentation that actually helps teams align.
-    </p>
-    
-    <a href="/why-most-documentation-is-useless/" class="text-blue-500 hover:underline mt-2 inline-block">Read More</a>
-</li>
-
-        
-            <li class="bg-white p-4 sm:p-6 shadow rounded-lg post-item" 
-    data-title="Why Do We Need Projects at All?" 
-    data-content="Companies launch projects to innovate, grow, and stay competitive. But why do they often fail to recognize their value? Let&#39;s break it down." 
-    data-category="Project Management">
-
-    <a href="/why-do-we-need-projects/" class="text-xl sm:text-2xl font-bold text-blue-600 hover:underline block">
-        Why Do We Need Projects at All?
-    </a>
-
-    <p class="text-gray-500 text-xs sm:text-sm mt-1">
-        Mar 9, 2025 •
-        3 min read
-    </p>
-
-    <p class="text-gray-700 text-sm sm:text-base mt-2">
-        Companies launch projects to innovate, grow, and stay competitive. But why do they often fail to recognize their value? Let&#39;s break it down.
-    </p>
-    
-    <a href="/why-do-we-need-projects/" class="text-blue-500 hover:underline mt-2 inline-block">Read More</a>
-</li>
-
-        
-            <li class="bg-white p-4 sm:p-6 shadow rounded-lg post-item" 
-    data-title="Care as a Leader’s Core Virtue" 
-    data-content="Great leadership isn’t just about discipline—it’s about balance. Learn why care and empathy are essential virtues for effective leaders." 
-    data-category="Project Management">
-
-    <a href="/care-as-a-leaders-core-virtue/" class="text-xl sm:text-2xl font-bold text-blue-600 hover:underline block">
-        Care as a Leader’s Core Virtue
-    </a>
-
-    <p class="text-gray-500 text-xs sm:text-sm mt-1">
-        Feb 4, 2025 •
-        2 min read
-    </p>
-
-    <p class="text-gray-700 text-sm sm:text-base mt-2">
-        Great leadership isn’t just about discipline—it’s about balance. Learn why care and empathy are essential virtues for effective leaders.
-    </p>
-    
-    <a href="/care-as-a-leaders-core-virtue/" class="text-blue-500 hover:underline mt-2 inline-block">Read More</a>
-</li>
-
-        
-            <li class="bg-white p-4 sm:p-6 shadow rounded-lg post-item" 
-    data-title="Beyond Tuckman: A More Effective Model for Team Development" 
-    data-content="Tuckman’s model is a classic, but does it fully reflect how modern teams evolve? Learn why the Drexler-Sibbet Model provides a more practical approach." 
-    data-category="Project Management">
-
-    <a href="/beyond-tuckman-team-development/" class="text-xl sm:text-2xl font-bold text-blue-600 hover:underline block">
-        Beyond Tuckman: A More Effective Model for Team Development
-    </a>
-
-    <p class="text-gray-500 text-xs sm:text-sm mt-1">
-        Jan 24, 2025 •
-        5 min read
-    </p>
-
-    <p class="text-gray-700 text-sm sm:text-base mt-2">
-        Tuckman’s model is a classic, but does it fully reflect how modern teams evolve? Learn why the Drexler-Sibbet Model provides a more practical approach.
-    </p>
-    
-    <a href="/beyond-tuckman-team-development/" class="text-blue-500 hover:underline mt-2 inline-block">Read More</a>
-</li>
-
-        
-    </ul>
-
-    <!-- Pagination -->
-    <div class="mt-8 flex justify-center flex-wrap gap-2">
-    
-    
-    
-
-    <div class="flex flex-wrap gap-2 justify-center">
-        
+    <h1 class="text-3xl font-bold">Escaping Algorithmic Noise — A Journey to Digital Clarity</h1>
+    <div class="meta">
+        <span>March 15, 2025</span>
+        <span>•</span>
+        <span>3 min read</span>
     </div>
 
+    <article class="prose lg:prose-xl">
+        <h1>One day I realized I was spending hours scrolling through information I neither needed nor wanted.</h1>
+<p>That's weird, isn't it? How could something designed to give us information end up flooding us with noise?</p>
+<p>We all know that the modern internet runs on algorithms. Algorithms are great at figuring out what captures our attention, but terrible at knowing what actually matters to us. They measure success in minutes spent online, not the quality of the minutes spent. This creates an anomaly: we're more informed than ever, yet less focused and productive.</p>
+<p>So I started wondering, is there a simpler way to manage information? Could I still be informed without constantly drowning in a sea of algorithmic noise?</p>
+<p>My first experiment was radical simplicity. I limited my social media accounts to three: <strong>Telegram, YouTube, and LinkedIn</strong> — LinkedIn purely out of professional necessity, Telegram for friends, and YouTube only when I deliberately seek something. No Facebook, no Instagram, no Twitter. Initially, it felt strange, like I'd miss something crucial. But after a few months, I noticed the opposite: <strong>I missed nothing</strong>. Important news still found its way to me through conversations.</p>
+<p>The next anomaly came with news consumption. Why did I feel anxious or angry after checking the news? Because modern media has evolved to <strong>grab attention rather than inform objectively</strong>. To counteract this, I shrunk my news sources to just a handful of Telegram channels—carefully chosen small, independent outlets, preferably supported by direct donations. Such channels have only one incentive: <strong>serve the reader</strong>. If their quality slips, I simply unsubscribe without hesitation.</p>
+<p>For essential communication, I moved important discussions away from messengers and into <strong>email</strong>, using a simple and cheap service like <strong>PurelyMail</strong>. Paying a small fee each year gives me a neat trade-off: fewer distractions, more clarity and ownerhip of my mail.</p>
+<p>But perhaps the biggest anomaly was discovering that the simplest and most powerful solution had already existed for decades: <strong>RSS feeds</strong>. Most people have forgotten about them, but RSS lets you subscribe directly to blogs and authors you trust. <strong>No algorithm, no distraction — just a pure, chronological stream of ideas.</strong></p>
+<p>I'm nostalgic for the early days of the web when personal blogs flourished. Authors like <strong>Paul Graham</strong> or <strong>Johanna Rothman</strong> still maintain sites where their essays feel personal, thoughtful, and genuine — something social media rarely provides. I wish there were more of these small, thoughtful islands of content, written carefully and read intentionally.</p>
+<p>What I learned from these experiments is simple yet powerful: <strong>complexity and overload aren't inevitable</strong>. The internet doesn't have to be a battleground for our attention. By consciously limiting where I place my focus, I've regained <strong>clarity, productivity, and most importantly, space to think</strong>.</p>
+<p>Maybe you don't need radical digital minimalism. But if you feel overwhelmed, remember that <strong>simplicity isn't just possible—it's surprisingly liberating</strong>.</p>
+<h2>My Recommendations</h2>
+<p>If you're looking for high-quality, algorithm-free content, here are some of my favorite sources:</p>
+<ul>
+<li>
+<p><strong><a href="https://www.paulgraham.com/articles.html">Paul Graham's Essays</a></strong>: Insightful writings on startups, technology, and philosophy by the co-founder of Y Combinator.</p>
+</li>
+<li>
+<p><strong><a href="https://www.jrothman.com">Johanna Rothman's Blog</a></strong>: Expert advice on managing product development, specializing in agile and lean methodologies.</p>
+</li>
+<li>
+<p><strong><a href="https://calnewport.com/blog/">Cal Newport's Blog</a></strong>: Explores deep work, digital minimalism, and strategies for focused success in a distracted world.</p>
+</li>
+<li>
+<p><strong><a href="https://www.virtuallyagile.co.uk/blog">Virtually Agile</a></strong>: Insights and resources on agile practices, virtual collaboration, and continuous improvement.</p>
+</li>
+<li>
+<p><strong><a href="https://beyondthebacklog.com/">Beyond the Backlog</a></strong>: Guidance on product management, marketing, design, and development to help teams deliver value.</p>
+</li>
+<li>
+<p><strong><a href="https://www.trevorlasn.com/">Trevor Lasn's Blog</a></strong>: Personal reflections and analyses on technology, culture, and the human experience.</p>
+</li>
+<li>
+<p><strong><a href="https://becketu.com/feed">Beck et U - RSS Feed</a></strong>: A curated feed offering diverse perspectives on technology, society, and innovation.</p>
+</li>
+</ul>
+
+    </article>
+
+    
+        <div class="tags">
+            
+                <a href="/tags/Information Overload" class="tag">Information Overload</a>
+            
+                <a href="/tags/Focus" class="tag">Focus</a>
+            
+                <a href="/tags/Productivity" class="tag">Productivity</a>
+            
+                <a href="/tags/RSS" class="tag">RSS</a>
+            
+                <a href="/tags/Minimalism" class="tag">Minimalism</a>
+            
+        </div>
     
 </div>
-
-</section>
-
-<!-- Link the JavaScript file -->
-<script src="/searchFilter.js"></script>
-
 </main>
     <script>
   const menuButton = document.getElementById('mobile-menu-button');
