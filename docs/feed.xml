@@ -268,5 +268,62 @@
       <dc:creator>Tim</dc:creator>
       <guid>https://buiadzhi.com/blog/escaping-algorithmic-noise/</guid>
     </item>
+    <item>
+      <title>Stop Prioritizing, Start Ranking</title>
+      <link>https://buiadzhi.com/blog/stop-prioritizing-start-ranking/</link>
+      <description>&lt;p&gt;I&#39;m exhausted by prioritization. It feels like the labor of Sisyphus. You label tasks as High, Medium, Low—but inevitably, resources shrink, and suddenly even High priority tasks spill over into an Expedite swimlane. Soon enough, you&#39;re prioritizing within Expedite itself. And what about those Low priority tasks? They collect digital dust, untouched, lingering endlessly in your backlog.&lt;/p&gt;
+&lt;p&gt;Prioritization is painful monkey work. Hear me out: &lt;em&gt;Kill prioritization altogether&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;In Essentialism, &lt;em&gt;Greg McKeown&lt;/em&gt; highlights a critical insight:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“The word priority came into the English language in the 1400s. It was
+singular. It meant the very first or prior thing. It stayed singular
+for the next five hundred years. Only in the 1900s did we pluralize
+the term and start talking about priorities.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Think about that. When you have multiple &amp;quot;priorities,&amp;quot; you lose your ability to truly focus. You scatter your attention and dilute your effectiveness. &lt;em&gt;With a list of &amp;quot;top ten priorities,&amp;quot; chances are you&#39;ll accomplish none meaningfully.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The logical path is clear: Identify the one thing that truly matters and fully commit to it. Reject distractions and shed the trivial many for the vital few.&lt;/p&gt;
+&lt;p&gt;But how do we achieve this in Agile project management, especially in customer-facing, feature-driven projects?&lt;/p&gt;
+&lt;p&gt;Two practical approaches stand out:&lt;/p&gt;
+&lt;p&gt;First, choose &lt;strong&gt;Ranking over Prioritization&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Ranking eliminates ambiguity. If you have ten tasks labeled High priority, how do you genuinely pick the most important one?&lt;/p&gt;
+&lt;p&gt;Ranks are straightforward:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Rank #1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Rank #2&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Rank #3, and so forth.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is precisely how a Product Backlog should be structured—ranked, never &amp;quot;prioritized.&amp;quot;&lt;/p&gt;
+&lt;p&gt;Clear terminology is not trivial. Precise language supports clear thinking.&lt;/p&gt;
+&lt;p&gt;But I get it. Ranking might feel uncomfortable when you deal with multiple application areas, each clamoring for attention.&lt;/p&gt;
+&lt;p&gt;Here&#39;s where &lt;strong&gt;User Story Mapping&lt;/strong&gt; comes in handy. It introduces a second dimension, making it possible to rank tasks clearly within different application areas. You see the big picture, slice tasks into meaningful releases, and synchronize rankings across multiple teams or products. Think about mapping in a broader application sphere.&lt;/p&gt;
+&lt;p&gt;Immediate benefits? Your team limits Work in Progress, maintains laser-like focus, reduces planning stress, and gains genuine agility to respond quickly as priorities evolve.&lt;/p&gt;
+&lt;p&gt;Yet ranking can be politically difficult. Executives, product owners, and stakeholders often resist hard rankings because acknowledging Task #5 as less important than Task #4 can be uncomfortable. Different groups, like Finance, Sales, and Tech, naturally have conflicting interests, and negotiating a definitive ranking can consume considerable energy and delay execution.&lt;/p&gt;
+&lt;p&gt;But let&#39;s tackle common &lt;em&gt;pushbacks&lt;/em&gt; I&#39;ve observed:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Ranking is too rigid! We&#39;re Agile—we need flexibility!&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Agility doesn&#39;t mean chaos; it means adapting quickly. Ranking is dynamic, not static. If work is truly important, it rises naturally. If it doesn&#39;t, why do it?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;We need priority categories for different teams/products.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Instead of conflicting priority systems, visualize with Mapping. Rank within streams—Frontend, Backend, DevOps—and use mapping to synchronize dependencies. Every team remains aligned with overall goals without fighting over arbitrary &amp;quot;priority&amp;quot; labels.&lt;/p&gt;
+&lt;p&gt;Imagine each domain clearly ranking their tasks while mapping clearly identifies dependencies. Conflicts dissolve, replaced by clarity.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Some tasks are urgent but not the most valuable!&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Urgency is not importance. If tasks are frequently urgent yet low-value, your planning or company culture might need reassessment. Truly urgent tasks deserve Rank #1. If everything feels urgent, nothing genuinely is.&lt;/p&gt;
+&lt;p&gt;When stakeholders frequently push urgent tasks, adopt a Cost of Delay model. It forces clarity—what happens if we don&#39;t do it immediately? Real urgency emerges from noise.&lt;/p&gt;
+&lt;p&gt;Prioritization, as we&#39;ve known it, has failed. It&#39;s time to rank, map, and regain genuine focus.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 17 Mar 2025 12:00:00 GMT</pubDate>
+      <dc:creator>Tim</dc:creator>
+      <guid>https://buiadzhi.com/blog/stop-prioritizing-start-ranking/</guid>
+    </item>
   </channel>
 </rss>
