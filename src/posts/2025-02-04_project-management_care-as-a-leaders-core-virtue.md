@@ -1,6 +1,6 @@
 ---
 title: "Care as a Leader’s Core Virtue"
-permalink: "/care-as-a-leaders-core-virtue/"
+permalink: "/blog/care-as-a-leaders-core-virtue/"
 date: 2025-02-04T12:00:00Z
 categories: ["Project Management"]
 tags: ["Leadership", "Empathy", "Management", "Team Dynamics"]
@@ -8,7 +8,7 @@ layout: "post.njk"
 pageType: "post"
 excerpt: "Great leadership isn’t just about discipline—it’s about balance. Learn why care and empathy are essential virtues for effective leaders."
 description: "Effective leadership balances discipline and empathy. This article explores real-life examples of how care transforms workplace relationships and team performance."
-canonical_url: "https://buiadzhi.com/care-as-a-leaders-core-virtue/"
+canonical_url: "https://buiadzhi.com/blog/care-as-a-leaders-core-virtue/"
 og_type: "article"
 ---
 

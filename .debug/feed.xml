@@ -8,7 +8,7 @@
     <language>en</language>
     <item>
       <title>Beyond Tuckman: A More Effective Model for Team Development</title>
-      <link>https://buiadzhi.com/blog/beyond-tuckman-team-development/</link>
+      <link>https://buiadzhi.com/beyond-tuckman-team-development/</link>
       <description>&lt;p&gt;Many of us have experienced teams that function seamlessly from the outset: tasks are executed smoothly, mutual respect feels natural, and deadlines cause no panic.&lt;/p&gt;
 &lt;p&gt;However, numerous other teams experience ongoing tension, misunderstandings, or conflicts. Often, this tension isn&#39;t due to an unwillingness to cooperate but rather stems from a lack of clarity, trust, or shared goals from the very beginning.&lt;/p&gt;
 &lt;p&gt;This is where &lt;strong&gt;team development models&lt;/strong&gt; come into play, providing us with a roadmap explaining how people collaborate, communicate, and evolve together over time.&lt;/p&gt;
@@ -62,11 +62,11 @@
 </description>
       <pubDate>Fri, 24 Jan 2025 12:00:00 GMT</pubDate>
       <dc:creator>Tim</dc:creator>
-      <guid>https://buiadzhi.com/blog/beyond-tuckman-team-development/</guid>
+      <guid>https://buiadzhi.com/beyond-tuckman-team-development/</guid>
     </item>
     <item>
       <title>Care as a Leader’s Core Virtue</title>
-      <link>https://buiadzhi.com/blog/care-as-a-leaders-core-virtue/</link>
+      <link>https://buiadzhi.com/care-as-a-leaders-core-virtue/</link>
       <description>&lt;p&gt;Managerial roles vary widely, as do their responsibilities. However, there&#39;s a common trait uniting all leaders: the responsibility to support and develop their subordinates.&lt;/p&gt;
 &lt;p&gt;Often onboard ships, I&#39;ve heard officers complain about having to &amp;quot;babysit&amp;quot; grown men. In my opinion, this is a profound misunderstanding. Employees approach their leaders not only because they lack knowledge or experience but because they need support and recognition.&lt;/p&gt;
 &lt;p&gt;Here are two real-life examples:&lt;/p&gt;
@@ -85,11 +85,11 @@
 </description>
       <pubDate>Tue, 04 Feb 2025 12:00:00 GMT</pubDate>
       <dc:creator>Tim</dc:creator>
-      <guid>https://buiadzhi.com/blog/care-as-a-leaders-core-virtue/</guid>
+      <guid>https://buiadzhi.com/care-as-a-leaders-core-virtue/</guid>
     </item>
     <item>
       <title>Why Do We Need Projects at All?</title>
-      <link>https://buiadzhi.com/blog/why-do-we-need-projects/</link>
+      <link>https://buiadzhi.com/why-do-we-need-projects/</link>
       <description>&lt;p&gt;Have you ever wondered why companies initiate projects? Maybe you&#39;ve heard the saying:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;quot;If you want something not to get done, call it a project.&amp;quot;&lt;/p&gt;
@@ -114,11 +114,11 @@
 </description>
       <pubDate>Sun, 09 Mar 2025 12:00:00 GMT</pubDate>
       <dc:creator>Tim</dc:creator>
-      <guid>https://buiadzhi.com/blog/why-do-we-need-projects/</guid>
+      <guid>https://buiadzhi.com/why-do-we-need-projects/</guid>
     </item>
     <item>
       <title>Why Most Documentation is Useless—And How to Fix It</title>
-      <link>https://buiadzhi.com/blog/why-most-documentation-is-useless/</link>
+      <link>https://buiadzhi.com/why-most-documentation-is-useless/</link>
       <description>&lt;h1&gt;&lt;strong&gt;The Documentation Paradox&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;Most documentation is useless. Not because no one reads it—though that&#39;s true—but because it doesn&#39;t actually help.&lt;/p&gt;
 &lt;p&gt;Documentation&#39;s whole purpose is to help teams align. But what usually happens instead? Either there&#39;s way too much documentation, and everyone ignores it, or there&#39;s almost none, and the same questions pop up again and again. Both extremes have the same flaw: they fail to create a shared understanding.&lt;/p&gt;
@@ -222,12 +222,13 @@
 </description>
       <pubDate>Wed, 12 Mar 2025 12:00:00 GMT</pubDate>
       <dc:creator>Tim</dc:creator>
-      <guid>https://buiadzhi.com/blog/why-most-documentation-is-useless/</guid>
+      <guid>https://buiadzhi.com/why-most-documentation-is-useless/</guid>
     </item>
     <item>
       <title>Escaping Algorithmic Noise — A Journey to Digital Clarity</title>
-      <link>https://buiadzhi.com/blog/escaping-algorithmic-noise/</link>
-      <description>&lt;h1&gt;One day I realized I was spending hours scrolling through information I neither needed nor wanted.&lt;/h1&gt;
+      <link>https://buiadzhi.com/escaping-algorithmic-noise/</link>
+      <description>&lt;pre&gt;&lt;code&gt;```markmap # Mindmap Title ## Branch 1 - Sub-branch 1.1 - Sub-branch 1.2 ## Branch 2 - Sub-branch 2.1 ```&lt;/code&gt;&lt;/pre&gt;
+&lt;h1&gt;One day I realized I was spending hours scrolling through information I neither needed nor wanted.&lt;/h1&gt;
 &lt;p&gt;That&#39;s weird, isn&#39;t it? How could something designed to give us information end up flooding us with noise?&lt;/p&gt;
 &lt;p&gt;We all know that the modern internet runs on algorithms. Algorithms are great at figuring out what captures our attention, but terrible at knowing what actually matters to us. They measure success in minutes spent online, not the quality of the minutes spent. This creates an anomaly: we&#39;re more informed than ever, yet less focused and productive.&lt;/p&gt;
 &lt;p&gt;So I started wondering, is there a simpler way to manage information? Could I still be informed without constantly drowning in a sea of algorithmic noise?&lt;/p&gt;
@@ -266,7 +267,7 @@
 </description>
       <pubDate>Sat, 15 Mar 2025 12:00:00 GMT</pubDate>
       <dc:creator>Tim</dc:creator>
-      <guid>https://buiadzhi.com/blog/escaping-algorithmic-noise/</guid>
+      <guid>https://buiadzhi.com/escaping-algorithmic-noise/</guid>
     </item>
   </channel>
 </rss>

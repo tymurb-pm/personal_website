@@ -1,6 +1,6 @@
 ---
 title: "Escaping Algorithmic Noise — A Journey to Digital Clarity"
-permalink: "/escaping-algorithmic-noise/"
+permalink: "/blog/escaping-algorithmic-noise/"
 date: 2025-03-15T12:00:00Z
 categories: ["Personal"]
 tags: ["Information Overload", "Focus", "Productivity", "RSS", "Minimalism"]
@@ -8,7 +8,7 @@ layout: "post.njk"
 pageType: "post"
 excerpt: "The modern internet bombards us with algorithm-driven noise, making us more informed yet less focused. Discover a path to regaining clarity and control over your digital life."
 description: "Algorithms are designed to keep us engaged, not informed. Learn how reducing digital clutter, embracing RSS, and choosing intentional content consumption can lead to a clearer, more productive life."
-canonical_url: "https://buiadzhi.com/escaping-algorithmic-noise/"
+canonical_url: "https://buiadzhi.com/blog/escaping-algorithmic-noise/"
 og_type: "article"
 ---
 

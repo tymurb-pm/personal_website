@@ -1,6 +1,6 @@
 ---
 title: "Beyond Tuckman: A More Effective Model for Team Development"
-permalink: "/beyond-tuckman-team-development/"
+permalink: "/blog/beyond-tuckman-team-development/"
 date: 2025-01-24T12:00:00Z
 categories: ["Project Management"]
 tags: ["Team Development", "Leadership", "Trust", "Collaboration", "Drexler-Sibbet"]
@@ -8,7 +8,7 @@ layout: "post.njk"
 pageType: "post"
 excerpt: "Tuckman’s model is a classic, but does it fully reflect how modern teams evolve? Learn why the Drexler-Sibbet Model provides a more practical approach."
 description: "While Tuckman’s team development model is widely known, the Drexler-Sibbet framework offers a more nuanced approach, prioritizing trust and adaptability. Discover why it’s a game-changer for modern teams."
-canonical_url: "https://buiadzhi.com/beyond-tuckman-team-development/"
+canonical_url: "https://buiadzhi.com/blog/beyond-tuckman-team-development/"
 og_type: "article"
 ---
 

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Most Documentation is Useless—And How to Fix It</title>
+    <link rel="stylesheet" href="/styles/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+        <link rel="stylesheet" href="/styles/blog.css">
+    
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+     <style>
+     /* Ensure body padding dynamically adjusts to navbar height */
+     body {
+       padding-top: 64px;
+     }
+ 
+/* Navigation link styles */
+#navbar .nav-link {
+  color: #333;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+/* Underline effect for navigation links */
+#navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Animate underline only for non-active links on hover */
+#navbar .nav-link:hover:not(.active-link)::after {
+  transform: scaleX(1);
+}
+
+/* Ensure active links are always underlined without animation */
+#navbar .nav-link.active-link::after {
+  transform: scaleX(1);
+  transition: none; /* No animation for active links */
+}
+
+/* Ensure active links are visually distinct */
+#navbar .nav-link.active-link {
+  color: #000; /* Darker text for active links */
+  font-weight: 600;
+}
+
+
+
+     /* Mobile menu dropdown (hidden by default) */
+     #mobile-menu-dropdown {
+       display: none;
+       opacity: 0;
+       pointer-events: none;
+       transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+       visibility: hidden;
+     }
+ 
+     /* Show mobile menu when active */
+     #mobile-menu-dropdown.open {
+       display: block;
+       opacity: 1;
+       pointer-events: auto;
+       visibility: visible;
+     }
+ 
+     /* Fixed navbar styling */
+     .fixed {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       background-color: white;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       z-index: 1000;
+     }
+   </style>
+ </head>
+ <body>
+ 
+   <header id="navbar" class="fixed">
+     <nav class="max-w-4xl mx-auto flex justify-between items-center p-4">
+       <!-- Logo / Branding -->
+       <a href="/" class="text-xl font-bold text-gray-800">Tymur Buiadzhi</a>
+       
+       <!-- Mobile Menu Button -->
+       <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-expanded="false">
+         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+         </svg>
+       </button>
+ 
+       <!-- Desktop Navigation Menu -->
+       <div id="desktop-menu" class="hidden md:flex space-x-8">
+         <a href="/" class="nav-link text-gray-600 hover:text-gray-900">Home</a>
+         <a href="/blog/" class="nav-link text-gray-600 hover:text-gray-900">Blog</a>
+         <a href="/cv/" class="nav-link text-gray-600 hover:text-gray-900">CV</a>
+         <a href="/contact-page/" class="nav-link text-gray-600 hover:text-gray-900">Contact</a>
+       </div>
+     </nav>
+         <!-- Mobile Navigation Dropdown -->
+     <div id="mobile-menu-dropdown" class="md:hidden bg-white shadow-md">
+       <a href="/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Home</a>
+       <a href="/blog/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Blog</a>
+       <a href="/cv/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">CV</a>
+       <a href="/contact-page/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Contact</a>
+     </div>
+      </header>
+ 
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Select necessary elements
+  const navbar = document.getElementById("navbar");
+  const mobileMenuDropdown = document.getElementById("mobile-menu-dropdown");
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+
+  let lastScrollY = window.scrollY;
+  let isScrollingDown = false;
+  let ticking = false;
+  let scrollThreshold = 50; // Cumulative scroll before full hide
+  let accumulatedScroll = 0;
+
+  // Add smooth transition effects
+  navbar.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
+
+  /**
+   * Handles navbar visibility with smooth fading and sliding effect.
+   */
+  function handleScroll() {
+    if (ticking) return;
+    ticking = true;
+
+    window.requestAnimationFrame(() => {
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - lastScrollY;
+
+      if (scrollDelta > 0) {
+        // Scrolling down: accumulate distance and gradually hide navbar
+        accumulatedScroll += scrollDelta;
+        let opacityFactor = Math.max(1 - accumulatedScroll / scrollThreshold, 0);
+        navbar.style.opacity = opacityFactor;
+        navbar.style.transform = `translateY(${-accumulatedScroll}px)`;
+
+        if (accumulatedScroll >= scrollThreshold && !isScrollingDown) {
+          isScrollingDown = true;
+        }
+      } else if (scrollDelta < 0) {
+        // Scrolling up: reset accumulated scroll and smoothly show navbar
+        accumulatedScroll = Math.max(accumulatedScroll + scrollDelta, 0);
+        let opacityFactor = Math.max(1 - accumulatedScroll / scrollThreshold, 0);
+        navbar.style.opacity = opacityFactor;
+        navbar.style.transform = `translateY(${-accumulatedScroll}px)`;
+
+        if (isScrollingDown) {
+          isScrollingDown = false;
+        }
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    });
+  }
+
+  /**
+   * Toggles the mobile menu visibility and updates accessibility attributes.
+   */
+  function toggleMobileMenu() {
+    const isOpen = mobileMenuDropdown.classList.toggle("open");
+    mobileMenuButton.setAttribute("aria-expanded", isOpen);
+  }
+
+  /**
+   * Highlights the active navigation link based on the current URL.
+   */
+  function updateActiveLinks() {
+    const currentPath = window.location.pathname;
+    document.querySelectorAll(".nav-link").forEach(link => {
+      const linkPath = new URL(link.href, window.location.origin).pathname;
+      if (currentPath === linkPath || (currentPath.startsWith(linkPath) && linkPath !== "/")) {
+        link.classList.add("active-link");
+      } else {
+        link.classList.remove("active-link");
+      }
+    });
+  }
+
+  // Attach event listeners
+  window.addEventListener("scroll", handleScroll);
+  mobileMenuButton.addEventListener("click", toggleMobileMenu);
+  window.addEventListener("resize", () => mobileMenuDropdown.classList.remove("open"));
+  updateActiveLinks();
+});
+
+   </script>
+ 
+ </body>
+ </html>
+
+<main class="flex-grow max-w-4xl mx-auto p-4 sm:p-6 w-full">
+    
+<div class="post-wrapper">
+   <a href="/blog" class="back-link">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+       stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 18l-6-6 6-6"/>
+  </svg>
+  Back to Blog
+    </a>
+
+
+    <h1 class="text-3xl font-bold">Why Most Documentation is Useless—And How to Fix It</h1>
+    <div class="meta">
+        <span>March 12, 2025</span>
+        <span>•</span>
+        <span>9 min read</span>
+    </div>
+
+    <article class="prose lg:prose-xl">
+        <h1><strong>The Documentation Paradox</strong></h1>
+<p>Most documentation is useless. Not because no one reads it—though that's true—but because it doesn't actually help.</p>
+<p>Documentation's whole purpose is to help teams align. But what usually happens instead? Either there's way too much documentation, and everyone ignores it, or there's almost none, and the same questions pop up again and again. Both extremes have the same flaw: they fail to create a shared understanding.</p>
+<p>The irony here is that teams think they're solving a problem with documentation, but often they're creating new ones instead.</p>
+<h1><strong>The Two Ways Documentation Fails</strong></h1>
+<p>Most teams swing to one of two extremes, each problematic in its own way:</p>
+<h2>1. Bloated Documentation: When More is Less</h2>
+<p>Some teams believe clarity comes from covering every tiny detail. They produce huge wikis, endless process documents, and meticulous reports. But here's the thing: nobody reads them.</p>
+<p>Why? Because dense documents are intimidating. When faced with a long wall of text, most people skim, ignore, or abandon them entirely. Too much information also means it's hard to find what actually matters, and when documentation inevitably becomes outdated, people rely on incorrect info—which is worse than none at all.</p>
+<p>Worst of all, this massive documentation creates a false sense of security. Teams assume they've &quot;covered everything,&quot; but if nobody understands or uses it, the documentation might as well not exist.</p>
+<h2>2. Missing Documentation: When Knowledge Vanishes</h2>
+<p>On the other end, some teams try to skip documentation completely. They rely on meetings, Slack messages, or quick hallway chats. At first glance, this seems efficient—writing stuff down takes time, after all. But in the long run, it causes bigger headaches:</p>
+<p>People forget. Decisions made verbally disappear over time, and teams repeatedly waste effort re-solving old problems. Knowledge gets trapped in silos, with the entire team relying on a handful of &quot;experts.&quot; Onboarding new team members becomes a nightmare—they interrupt others constantly for basic information.</p>
+<p>The ultimate disaster hits when someone key leaves. Suddenly, entire processes vanish, and the team scrambles to piece things back together.</p>
+<h2>Why Neither Works</h2>
+<p>Bloated documentation and missing documentation share the same flaw: they fail to create genuine, shared understanding. Good documentation isn't about recording everything—it's about making sure people truly understand what matters.</p>
+<p>Documentation isn't successful just because it's written down. It’s successful when people don't have to ask basic questions again. It’s not about how much you write—it’s about how clearly you align your team's thinking.</p>
+<h1>What Actually Makes Documentation Useful?</h1>
+<p>People assume good documentation is detailed documentation. But the truth is exactly the opposite: <strong>the best documentation is the simplest</strong>.</p>
+<p>Think about it: if you wrote down every detail of your day, it wouldn't be clarity—it would be chaos. Documentation works the same way. You don't want to read a massive manual; you want quick, clear answers to the questions you actually have.</p>
+<p>Good documentation does three simple things:</p>
+<ul>
+<li><strong>It’s short.</strong> If you can say it in half the words, do it. Less clutter means more clarity.</li>
+<li><strong>It’s easy to read.</strong> Use plain, conversational language. The point isn’t to sound smart; it’s to be understood.</li>
+<li><strong>It answers real questions.</strong> Write documentation to solve actual problems your team has, not hypothetical scenarios no one encounters.</li>
+</ul>
+<p>To know if your documentation is working, just hand it to someone new. If they immediately get it, you’ve done well. If they’re confused or bored, you haven’t.</p>
+<h2><strong>Documentation Doesn’t Guarantee Understanding</strong></h2>
+<p>Another common mistake is thinking documentation alone creates alignment. But writing something down doesn’t guarantee everyone gets it. Misinterpretation is incredibly common—probably more common than you think.</p>
+<ul>
+<li><strong>People see what they want to see.</strong> Two readers can interpret the same sentence completely differently. Without enough context, misunderstandings multiply.</li>
+<li><strong>Always provide context.</strong> Writing “We chose option A” isn’t helpful unless readers know why you chose A over B. Without the &quot;why,&quot; the decision seems arbitrary and might get undone unintentionally later.</li>
+<li><strong>Good documentation reduces conversation.</strong> If you find yourself answering the same questions after writing documentation, it means your documentation isn’t working.</li>
+</ul>
+<p>That’s why you don’t need documentation that captures everything—you need documentation that prevents misunderstanding. We call this approach <strong>Minimum Viable Documentation (MVD)</strong>, and it changes the entire game.</p>
+<h2><strong>The Magic of Minimum Viable Documentation (MVD)</strong></h2>
+<p>The idea behind <strong>Minimum Viable Documentation</strong> is simple: write down the absolute minimum needed to keep everyone aligned—nothing more.</p>
+<p>It’s like packing for a trip: you don’t take everything you own, just what you'll actually use. Documentation is the same. You capture only what the team genuinely needs. Not because writing less is a goal in itself, but because unnecessary documentation just adds noise.</p>
+<p>The best MVD follows three straightforward rules:</p>
+<ul>
+<li><strong>Only document the essentials.</strong> Focus on things your team repeatedly asks about. If it’s rarely needed, leave it out.</li>
+<li><strong>Explain why, not just how.</strong> Understanding the reasoning behind decisions prevents future confusion and redundant debates.</li>
+<li><strong>Make it actionable.</strong> Every piece of documentation should help someone do their job immediately—if it doesn't, it's clutter.</li>
+</ul>
+<p>The point of MVD isn’t laziness—it’s efficiency. You cut out what's unnecessary so people actually use and benefit from what's left.</p>
+<h2><strong>Don't Repeat Yourself (DRY)—Especially in Documentation</strong></h2>
+<p>Borrowing wisdom from software developers, good documentation also follows the <strong>DRY principle</strong>—Don't Repeat Yourself.</p>
+<p>If you notice the same question coming up repeatedly, that's a sign to document it. But once documented, don’t write it again somewhere else. Multiple versions of the same information just create confusion about which is correct.</p>
+<p>Good documentation practices DRY by:</p>
+<ul>
+<li><strong>Answering frequent questions clearly—once.</strong> If someone asks the same thing twice, write it down.</li>
+<li><strong>Avoiding redundant sources.</strong> Having three documents saying slightly different things leads to chaos.</li>
+<li><strong>Keeping it lean.</strong> Short, clear documents get read and used; long documents get ignored.</li>
+</ul>
+<p>The goal isn't fewer documents just for the sake of fewer documents. The goal is fewer, better documents—ones that actually help people work smarter.</p>
+<h2><strong>The PMBOK Problem: Ignoring It Doesn’t Make It Go Away</strong></h2>
+<p>Project managers often roll their eyes at PMBOK documentation. It seems unnecessarily detailed and overly formal, especially in agile teams. And they're partly right: writing lengthy process guides for every tiny detail isn't practical—or even useful.</p>
+<p>But there's a twist: <strong>even if you don’t write it down, the underlying PMBOK concepts are still there.</strong> Every project deals with risks, stakeholders, scope creep, communications, and procurement—whether or not anyone bothers to document them formally.</p>
+<p>That's why good project managers keep at least a short, informal note about each critical area, even on agile teams. Think of it as minimal insurance against forgetting something important:</p>
+<ul>
+<li><strong>Risks:</strong> Quickly note what risks you've identified and how you'll handle them.</li>
+<li><strong>Stakeholders:</strong> Jot down who needs regular updates and what they care most about.</li>
+<li><strong>Scope changes:</strong> Briefly record why certain decisions or trade-offs were made.</li>
+</ul>
+<p>You don’t need a giant manual for this. Half a page is usually enough to avoid disaster.</p>
+<p>This is exactly what MVD looks like in practice: just enough PMBOK-style documentation to be useful, without drowning the team in paperwork.</p>
+<h2><strong>Agile Means Up-to-Date, Not Undocumented</strong></h2>
+<p>One of agile’s golden rules is that outdated documentation is worse than none at all. Why? Because stale documentation leads teams to confidently make the wrong decisions.</p>
+<p>In agile, documentation must evolve with the project itself. It’s a living thing, not something written once and forgotten:</p>
+<ul>
+<li><strong>Keep it fresh.</strong> If you haven’t updated a document in months, it's probably obsolete or useless.</li>
+<li><strong>Review often, revise regularly.</strong> Treat documentation like code—it needs refactoring as projects change.</li>
+<li><strong>Integrate documentation into your workflow.</strong> Mention updates in stand-ups, adjust documents in retrospectives, and regularly prune out-of-date information.</li>
+</ul>
+<p>Agile teams don’t skip documentation—they keep it alive and lean. Good documentation adapts to reality rather than pretending reality hasn't changed.</p>
+<h1>Documentation as an Onboarding Tool</h1>
+<p>People assume onboarding fails because new hires lack skills. Usually, that's not true. More often, new hires struggle because they lack context.</p>
+<p>When you join a new team, you don't just need instructions—you need a mental map of how the team thinks, why decisions were made, and what hidden pitfalls to avoid. Experienced team members already have this map in their heads. Newcomers don’t, and without it, they're stuck interrupting others or slowly figuring things out on their own.</p>
+<p>That's why onboarding documentation is critical—but only if it's done right:</p>
+<ul>
+<li><strong>Start small.</strong> Don’t overwhelm people with every detail at once. Give them what they need for their first week, then the first month, then the first quarter.</li>
+<li><strong>Explain the important decisions.</strong> Tell them the mistakes you've made, what you've learned, and how key decisions were reached.</li>
+<li><strong>Make it easy to find.</strong> If documentation is buried or hard to access, you might as well not have it.</li>
+</ul>
+<p>Onboarding documentation shouldn’t be a history textbook—it should be more like a survival guide.</p>
+<h2><strong>Knowledge Retention: How to Stop Losing Lessons Learned</strong></h2>
+<p>Most teams don't realize they have a documentation problem until someone important leaves. Suddenly, valuable knowledge disappears overnight.</p>
+<p>When experienced people leave, they don't just take their work with them—they take the context behind decisions, hidden knowledge, and unwritten processes. Without effective documentation, future team members waste enormous time relearning what was once common knowledge.</p>
+<p>Good documentation helps teams remember what's important:</p>
+<ul>
+<li><strong>Document the reasoning behind key decisions</strong>, so new people don’t repeat old mistakes.</li>
+<li><strong>Capture critical processes</strong>, so they don’t vanish along with an individual employee.</li>
+<li><strong>Preserve just enough knowledge to maintain clarity</strong>, without turning documentation into an overwhelming burden.</li>
+</ul>
+<p>This isn't just about efficiency—it's about resilience. Teams that document well grow stronger over time, while teams that don't find themselves constantly reinventing the wheel.</p>
+<h2><strong>Conclusion: Write Less, Align More</strong></h2>
+<p>Most documentation is ignored because it’s overwhelming, outdated, or irrelevant. It becomes digital clutter that people avoid—like a messy garage no one wants to clean.</p>
+<p>But good documentation isn’t clutter. It’s a tool that helps teams think clearly. It's about writing just enough to ensure everyone’s on the same page. The goal isn't to capture every tiny detail; the goal is clarity, alignment, and usefulness.</p>
+<p>Bad documentation creates noise. Good documentation eliminates confusion.</p>
+<p>In other words: don’t write more. Write better.</p>
+
+    </article>
+
+    
+        <div class="tags">
+            
+                <a href="/tags/Documentation" class="tag">Documentation</a>
+            
+                <a href="/tags/MVD" class="tag">MVD</a>
+            
+                <a href="/tags/Agile" class="tag">Agile</a>
+            
+                <a href="/tags/Knowledge Management" class="tag">Knowledge Management</a>
+            
+        </div>
+    
+</div>
+</main>
+    <script>
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu-dropdown');
+
+  menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+<footer class="bg-gray-100 text-gray-800 text-sm py-4 w-full border-t border-gray-300">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center text-center sm:text-left px-6 space-y-2 sm:space-y-0 sm:gap-8">
+        <p>© 2025 Tymur Buiadzhi | Built with 
+            <a href="https://www.11ty.dev/" class="text-blue-600 hover:text-blue-800 transition duration-200 underline">Eleventy</a>
+        </p>
+        <a href="/feed.xml" class="flex items-center space-x-2 text-gray-700 hover:text-gray-900 transition duration-200">
+            <i class="fa-solid fa-rss text-orange-500 text-lg"></i>
+            <span>RSS Feed</span>
+        </a>
+    </div>
+</footer>
+
+</body>
+</html>
+
