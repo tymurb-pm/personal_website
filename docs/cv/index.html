@@ -10,189 +10,183 @@
     
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
-     <style>
-     /* Ensure body padding dynamically adjusts to navbar height */
-     body {
-       padding-top: 64px;
-     }
- 
-/* Navigation link styles */
-#navbar .nav-link {
-  color: #333;
-  position: relative;
-  transition: color 0.3s ease-in-out;
-  text-decoration: none;
-}
-
-/* Underline effect for navigation links */
-#navbar .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Animate underline only for non-active links on hover */
-#navbar .nav-link:hover:not(.active-link)::after {
-  transform: scaleX(1);
-}
-
-/* Ensure active links are always underlined without animation */
-#navbar .nav-link.active-link::after {
-  transform: scaleX(1);
-  transition: none; /* No animation for active links */
-}
-
-/* Ensure active links are visually distinct */
-#navbar .nav-link.active-link {
-  color: #000; /* Darker text for active links */
-  font-weight: 600;
-}
-
-
-
-     /* Mobile menu dropdown (hidden by default) */
-     #mobile-menu-dropdown {
-       display: none;
-       opacity: 0;
-       pointer-events: none;
-       transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-       visibility: hidden;
-     }
- 
-     /* Show mobile menu when active */
-     #mobile-menu-dropdown.open {
-       display: block;
-       opacity: 1;
-       pointer-events: auto;
-       visibility: visible;
-     }
- 
-     /* Fixed navbar styling */
-     .fixed {
-       position: fixed;
-       top: 0;
-       left: 0;
-       width: 100%;
-       background-color: white;
-       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-       z-index: 1000;
-     }
-   </style>
- </head>
- <body>
- 
-   <header id="navbar" class="fixed">
-     <nav class="max-w-4xl mx-auto flex justify-between items-center p-4">
-       <!-- Logo / Branding -->
-       <a href="/" class="text-xl font-bold text-gray-800">Tymur Buiadzhi</a>
-       
-       <!-- Mobile Menu Button -->
-       <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-expanded="false" aria-label="Toggle Navigation Menu">
-         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-         </svg>
-       </button>
- 
-       <!-- Desktop Navigation Menu -->
-       <div id="desktop-menu" class="hidden md:flex space-x-8">
-         <a href="/" class="nav-link text-gray-600 hover:text-gray-900">Home</a>
-         <a href="/blog/" class="nav-link text-gray-600 hover:text-gray-900">Blog</a>
-         <a href="/cv/" class="nav-link text-gray-600 hover:text-gray-900">CV</a>
-         <a href="/contact-page/" class="nav-link text-gray-600 hover:text-gray-900">Contact</a>
-       </div>
-     </nav>
-         <!-- Mobile Navigation Dropdown -->
-     <div id="mobile-menu-dropdown" class="md:hidden bg-white shadow-md">
-       <a href="/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Home</a>
-       <a href="/blog/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Blog</a>
-       <a href="/cv/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">CV</a>
-       <a href="/contact-page/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Contact</a>
-     </div>
-      </header>
- 
-   <script>
-document.addEventListener("DOMContentLoaded", function () {
-  // Select necessary elements
-  const navbar = document.getElementById("navbar");
-  const mobileMenuDropdown = document.getElementById("mobile-menu-dropdown");
-  const mobileMenuButton = document.getElementById("mobile-menu-button");
-
-  let lastScrollY = window.scrollY;
-  let isScrollingDown = false;
-  let ticking = false;
-  let scrollThreshold = 50; // Cumulative scroll before full hide
-  let accumulatedScroll = 0;
-
-  // Add smooth transition effects
-  navbar.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-
-  /**
-   * Handles navbar visibility with smooth fading and sliding effect.
-   */
-function handleScroll() {
-  const currentScrollY = window.scrollY;
-  const scrollDelta = currentScrollY - lastScrollY;
-
-  if (scrollDelta > 10) { // Threshold to detect actual scrolling
-    navbar.style.opacity = "0";
-    navbar.style.transform = "translateY(-100%)"; // Fully hides navbar
-  } else if (scrollDelta < -10) {
-    navbar.style.opacity = "1";
-    navbar.style.transform = "translateY(0)"; // Reveals navbar
-  }
-
-  lastScrollY = currentScrollY;
-}
-
-
-  /**
-   * Toggles the mobile menu visibility and updates accessibility attributes.
-   */
-function toggleMobileMenu() {
-  const isOpen = mobileMenuDropdown.classList.toggle("open");
-  mobileMenuButton.setAttribute("aria-expanded", isOpen);
-
-  if (window.innerWidth >= 768) {
-    mobileMenuDropdown.classList.remove("open");
-  }
-}
-
-
-  /**
-   * Highlights the active navigation link based on the current URL.
-   */
-function updateActiveLinks() {
-  const currentPath = window.location.pathname;
-  document.querySelectorAll(".nav-link").forEach(link => {
-    const linkPath = new URL(link.href, window.location.origin).pathname;
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Fix</title>
     
-    if (currentPath === linkPath) {
-      link.classList.add("active-link");
-    } else {
-      link.classList.remove("active-link");
-    }
-  });
-}
+    <style>
+        /* Ensure body padding dynamically adjusts to navbar height */
+        body {
+            padding-top: 64px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
+        /* Navigation link styles */
+        #navbar .nav-link {
+            color: #333;
+            position: relative;
+            transition: color 0.3s ease-in-out;
+            text-decoration: none;
+        }
 
-  // Attach event listeners
-  window.addEventListener("scroll", handleScroll);
-  mobileMenuButton.addEventListener("click", toggleMobileMenu);
-  window.addEventListener("resize", () => mobileMenuDropdown.classList.remove("open"));
-  updateActiveLinks();
-});
+        /* Underline effect for navigation links */
+        #navbar .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease-in-out;
+        }
 
-   </script>
- 
- </body>
- </html>
+        /* Animate underline only for non-active links on hover */
+        #navbar .nav-link:hover:not(.active-link)::after {
+            transform: scaleX(1);
+        }
+
+        /* Ensure active links are always underlined without animation */
+        #navbar .nav-link.active-link::after {
+            transform: scaleX(1);
+            transition: none;
+        }
+
+        /* Ensure active links are visually distinct */
+        #navbar .nav-link.active-link {
+            color: #000;
+            font-weight: 600;
+        }
+
+        /* Mobile menu dropdown (hidden by default) */
+        #mobile-menu-dropdown {
+            display: none;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            visibility: hidden;
+        }
+
+        /* Show mobile menu when active */
+        #mobile-menu-dropdown.open {
+            display: block;
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        /* Fixed navbar styling */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="navbar">
+        <nav class="max-w-4xl mx-auto flex justify-between items-center p-4">
+            <!-- Logo / Branding -->
+            <a href="/" class="text-xl font-bold text-gray-800">Tymur Buiadzhi</a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-expanded="false" aria-label="Toggle Navigation Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+            <!-- Desktop Navigation Menu -->
+            <div id="desktop-menu" class="hidden md:flex space-x-8">
+                <a href="/" class="nav-link text-gray-600 hover:text-gray-900">Home</a>
+                <a href="/blog/" class="nav-link text-gray-600 hover:text-gray-900">Blog</a>
+                <a href="/cv/" class="nav-link text-gray-600 hover:text-gray-900">CV</a>
+                <a href="/contact-page/" class="nav-link text-gray-600 hover:text-gray-900">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation Dropdown -->
+        <div id="mobile-menu-dropdown" class="md:hidden bg-white shadow-md">
+            <a href="/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Home</a>
+            <a href="/blog/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Blog</a>
+            <a href="/cv/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">CV</a>
+            <a href="/contact-page/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Contact</a>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select necessary elements
+            const navbar = document.getElementById("navbar");
+            const mobileMenuDropdown = document.getElementById("mobile-menu-dropdown");
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+
+            let lastScrollY = window.scrollY;
+
+            function handleScroll() {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY === 0) {
+                    // Always show navbar when at the top
+                    navbar.style.opacity = "1";
+                    navbar.style.transform = "translateY(0)";
+                } else if (currentScrollY > lastScrollY) {
+                    // Hide navbar when scrolling down
+                    navbar.style.opacity = "0";
+                    navbar.style.transform = "translateY(-100%)";
+                } else {
+                    // Show navbar when scrolling up
+                    navbar.style.opacity = "1";
+                    navbar.style.transform = "translateY(0)";
+                }
+
+                lastScrollY = currentScrollY;
+            }
+
+            function toggleMobileMenu() {
+                const isOpen = mobileMenuDropdown.classList.toggle("open");
+                mobileMenuButton.setAttribute("aria-expanded", isOpen);
+
+                if (window.innerWidth >= 768) {
+                    mobileMenuDropdown.classList.remove("open");
+                }
+            }
+
+            function updateActiveLinks() {
+                const currentPath = window.location.pathname;
+                document.querySelectorAll(".nav-link").forEach(link => {
+                    const linkPath = new URL(link.href, window.location.origin).pathname;
+                    if (currentPath === linkPath) {
+                        link.classList.add("active-link");
+                    } else {
+                        link.classList.remove("active-link");
+                    }
+                });
+            }
+
+            // Attach event listeners
+            window.addEventListener("scroll", handleScroll);
+            mobileMenuButton.addEventListener("click", toggleMobileMenu);
+            window.addEventListener("resize", () => mobileMenuDropdown.classList.remove("open"));
+            updateActiveLinks();
+        });
+    </script>
+
+</body>
+</html>
+
 
 <main class="flex-grow max-w-4xl mx-auto p-4 sm:p-6 w-full">
     <section>
