@@ -94,7 +94,7 @@
        <a href="/" class="text-xl font-bold text-gray-800">Tymur Buiadzhi</a>
        
        <!-- Mobile Menu Button -->
-       <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-expanded="false">
+       <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-expanded="false" aria-label="Toggle Navigation Menu">
          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
          </svg>
@@ -136,63 +136,51 @@ document.addEventListener("DOMContentLoaded", function () {
   /**
    * Handles navbar visibility with smooth fading and sliding effect.
    */
-  function handleScroll() {
-    if (ticking) return;
-    ticking = true;
+function handleScroll() {
+  const currentScrollY = window.scrollY;
+  const scrollDelta = currentScrollY - lastScrollY;
 
-    window.requestAnimationFrame(() => {
-      const currentScrollY = window.scrollY;
-      const scrollDelta = currentScrollY - lastScrollY;
-
-      if (scrollDelta > 0) {
-        // Scrolling down: accumulate distance and gradually hide navbar
-        accumulatedScroll += scrollDelta;
-        let opacityFactor = Math.max(1 - accumulatedScroll / scrollThreshold, 0);
-        navbar.style.opacity = opacityFactor;
-        navbar.style.transform = `translateY(${-accumulatedScroll}px)`;
-
-        if (accumulatedScroll >= scrollThreshold && !isScrollingDown) {
-          isScrollingDown = true;
-        }
-      } else if (scrollDelta < 0) {
-        // Scrolling up: reset accumulated scroll and smoothly show navbar
-        accumulatedScroll = Math.max(accumulatedScroll + scrollDelta, 0);
-        let opacityFactor = Math.max(1 - accumulatedScroll / scrollThreshold, 0);
-        navbar.style.opacity = opacityFactor;
-        navbar.style.transform = `translateY(${-accumulatedScroll}px)`;
-
-        if (isScrollingDown) {
-          isScrollingDown = false;
-        }
-      }
-
-      lastScrollY = currentScrollY;
-      ticking = false;
-    });
+  if (scrollDelta > 10) { // Threshold to detect actual scrolling
+    navbar.style.opacity = "0";
+    navbar.style.transform = "translateY(-100%)"; // Fully hides navbar
+  } else if (scrollDelta < -10) {
+    navbar.style.opacity = "1";
+    navbar.style.transform = "translateY(0)"; // Reveals navbar
   }
+
+  lastScrollY = currentScrollY;
+}
+
 
   /**
    * Toggles the mobile menu visibility and updates accessibility attributes.
    */
-  function toggleMobileMenu() {
-    const isOpen = mobileMenuDropdown.classList.toggle("open");
-    mobileMenuButton.setAttribute("aria-expanded", isOpen);
+function toggleMobileMenu() {
+  const isOpen = mobileMenuDropdown.classList.toggle("open");
+  mobileMenuButton.setAttribute("aria-expanded", isOpen);
+
+  if (window.innerWidth >= 768) {
+    mobileMenuDropdown.classList.remove("open");
   }
+}
+
 
   /**
    * Highlights the active navigation link based on the current URL.
    */
-  function updateActiveLinks() {
-    const currentPath = window.location.pathname;
-    document.querySelectorAll(".nav-link").forEach(link => {
-      const linkPath = new URL(link.href, window.location.origin).pathname;
-      if (currentPath === linkPath || (currentPath.startsWith(linkPath) && linkPath !== "/")) {
-        link.classList.add("active-link");
-      } else {
-        link.classList.remove("active-link");
-      }
-    });
-  }
+function updateActiveLinks() {
+  const currentPath = window.location.pathname;
+  document.querySelectorAll(".nav-link").forEach(link => {
+    const linkPath = new URL(link.href, window.location.origin).pathname;
+    
+    if (currentPath === linkPath) {
+      link.classList.add("active-link");
+    } else {
+      link.classList.remove("active-link");
+    }
+  });
+}
+
 
   // Attach event listeners
   window.addEventListener("scroll", handleScroll);
