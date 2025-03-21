@@ -1,7 +1,7 @@
 ---
 title: "Leading Without Forcing"
 permalink: "/blog/leading-without-forcing/"
-date: 2025-03-21T12:00:00Z
+date: 2025-03-21T12:01:00Z
 categories: ["Project Management"]
 tags: ["Leadership", "Agile", "Team Dynamics", "Scrum", "Change Management"]
 layout: "post.njk"
