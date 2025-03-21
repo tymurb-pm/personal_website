@@ -325,5 +325,37 @@ the term and start talking about priorities.”&lt;/p&gt;
       <dc:creator>Tim</dc:creator>
       <guid>https://buiadzhi.com/blog/stop-prioritizing-start-ranking/</guid>
     </item>
+    <item>
+      <title>Leading Without Forcing</title>
+      <link>https://buiadzhi.com/blog/leading-without-forcing/</link>
+      <description>&lt;p&gt;A Project Manager once asked me a question that caught me off guard:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;quot;How do I force my team to follow what I say? I know the best workflow for them, but they’re defensive and won’t change anything.&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This kind of question doesn’t lead anywhere good. In fact, it’s based on a mistaken premise: that you know what’s best for the team before you’ve worked with them.&lt;/p&gt;
+&lt;p&gt;Courses and certifications are useful. They give you a toolkit. But they don’t give you the team. And they definitely don’t give you permission to treat frameworks as commandments.&lt;/p&gt;
+&lt;p&gt;Knowing how Scrum works doesn&#39;t mean your team should use it. In fact, if your first instinct is to force a team into Scrum, there are two possibilities: either you don’t fully understand Scrum, or your team doesn’t need it.&lt;/p&gt;
+&lt;p&gt;The same goes for Waterfall, Kanban, PRINCE2—any framework, really. They’re all optional. The real skill of a Project Manager is not in memorizing process diagrams, but in choosing what fits. And more often than not, what fits is something you’ll have to tailor yourself.&lt;/p&gt;
+&lt;p&gt;Right now, I’m managing three projects. Each one runs differently.&lt;/p&gt;
+&lt;p&gt;So what influences your approach?&lt;/p&gt;
+&lt;p&gt;Start with team size. The bigger the team, the more communication paths exist. There’s even a formula for it: &lt;em&gt;n(n-1)/2&lt;/em&gt;. A team of 8 has 28 communication channels. A team of 11 has 55. That’s why scaling is hard. Every new person adds more complexity than you’d expect.&lt;/p&gt;
+&lt;p&gt;Then there’s team maturity. Agile isn’t easy. Neither is Waterfall. If your team hasn’t worked with a given methodology before, there’s going to be a learning curve. Most developers I’ve worked with have never read the Scrum Guide, let alone been certified in it.&lt;/p&gt;
+&lt;p&gt;If you want to dig deeper into this, look up the Capability Maturity Model (CMM). It breaks maturity into five stages: Initial, Repeatable, Defined, Managed, Optimizing. But even without the model, the idea is simple: don’t assume your team starts at level 5.&lt;/p&gt;
+&lt;p&gt;And don’t forget yourself. Your own experience matters too. Not just what you know, but how well you can adapt to the situation in front of you.&lt;/p&gt;
+&lt;p&gt;So what do you do if the team seems chaotic and unstructured?&lt;/p&gt;
+&lt;p&gt;You might be tempted to push hard. But that’s the worst time to do it. The better approach is to &lt;strong&gt;observe&lt;/strong&gt;, &lt;strong&gt;stabilize&lt;/strong&gt;, and &lt;strong&gt;co-create&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Start by watching how things already work. Map out their current process. It might be messy. That’s fine. Your job is to find the patterns in the mess and help the team make them repeatable.&lt;/p&gt;
+&lt;p&gt;Then bring them into the process.&lt;/p&gt;
+&lt;p&gt;→ Ask simple questions: “What’s frustrating you right now?”&lt;br&gt;
+→ Let them define the problems. They usually know.&lt;br&gt;
+→ Don’t propose a framework—propose a small change. “What if we tried breaking this into smaller chunks?” That’s how you sneak in iterations without triggering resistance.&lt;/p&gt;
+&lt;p&gt;If you want to make a process stick, don’t sell it. &lt;strong&gt;Let the team discover the benefit themselves.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;→ Show small wins. A kanban board that cuts down on chaos. A weekly check-in that prevents last-minute surprises. A better way to share updates that saves them time.&lt;/p&gt;
+&lt;p&gt;These small shifts build momentum. And momentum builds trust.&lt;/p&gt;
+&lt;p&gt;Once the team feels stable—once they trust you and see that change can actually make things better—you can guide them further. Not by force, but by alignment.&lt;/p&gt;
+&lt;p&gt;That’s how real transformation happens. Not all at once. And not because you told them what to do. But because you listened, adapted, and moved forward—together.&lt;/p&gt;
+</description>
+      <pubDate>Fri, 21 Mar 2025 12:00:00 GMT</pubDate>
+      <dc:creator>Tim</dc:creator>
+      <guid>https://buiadzhi.com/blog/leading-without-forcing/</guid>
+    </item>
   </channel>
 </rss>
