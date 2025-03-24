@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start With Why</title>
+    <link rel="stylesheet" href="/styles/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+        <link rel="stylesheet" href="/styles/blog.css">
+    
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Fix</title>
+    
+    <style>
+        /* Ensure body padding dynamically adjusts to navbar height */
+        body {
+            padding-top: 64px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation link styles */
+        #navbar .nav-link {
+            color: #333;
+            position: relative;
+            transition: color 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        /* Underline effect for navigation links */
+        #navbar .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Animate underline only for non-active links on hover */
+        #navbar .nav-link:hover:not(.active-link)::after {
+            transform: scaleX(1);
+        }
+
+        /* Ensure active links are always underlined without animation */
+        #navbar .nav-link.active-link::after {
+            transform: scaleX(1);
+            transition: none;
+        }
+
+        /* Ensure active links are visually distinct */
+        #navbar .nav-link.active-link {
+            color: #000;
+            font-weight: 600;
+        }
+
+        /* Mobile menu dropdown (hidden by default) */
+        #mobile-menu-dropdown {
+            display: none;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            visibility: hidden;
+        }
+
+        /* Show mobile menu when active */
+        #mobile-menu-dropdown.open {
+            display: block;
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        /* Fixed navbar styling */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="navbar">
+        <nav class="max-w-4xl mx-auto flex justify-between items-center p-4">
+            <!-- Logo / Branding -->
+            <a href="/" class="text-xl font-bold text-gray-800">Tymur Buiadzhi</a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-expanded="false" aria-label="Toggle Navigation Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+            <!-- Desktop Navigation Menu -->
+            <div id="desktop-menu" class="hidden md:flex space-x-8">
+                <a href="/" class="nav-link text-gray-600 hover:text-gray-900">Home</a>
+                <a href="/blog/" class="nav-link text-gray-600 hover:text-gray-900">Blog</a>
+                <a href="/cv/" class="nav-link text-gray-600 hover:text-gray-900">CV</a>
+                <a href="/contact-page/" class="nav-link text-gray-600 hover:text-gray-900">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation Dropdown -->
+        <div id="mobile-menu-dropdown" class="md:hidden bg-white shadow-md">
+            <a href="/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Home</a>
+            <a href="/blog/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Blog</a>
+            <a href="/cv/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">CV</a>
+            <a href="/contact-page/" class="block px-4 py-3 text-lg text-gray-600 hover:bg-gray-100 border-t border-gray-200">Contact</a>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select necessary elements
+            const navbar = document.getElementById("navbar");
+            const mobileMenuDropdown = document.getElementById("mobile-menu-dropdown");
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+
+            let lastScrollY = window.scrollY;
+
+            function handleScroll() {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY === 0) {
+                    // Always show navbar when at the top
+                    navbar.style.opacity = "1";
+                    navbar.style.transform = "translateY(0)";
+                } else if (currentScrollY > lastScrollY) {
+                    // Hide navbar when scrolling down
+                    navbar.style.opacity = "0";
+                    navbar.style.transform = "translateY(-100%)";
+                } else {
+                    // Show navbar when scrolling up
+                    navbar.style.opacity = "1";
+                    navbar.style.transform = "translateY(0)";
+                }
+
+                lastScrollY = currentScrollY;
+            }
+
+            function toggleMobileMenu() {
+                const isOpen = mobileMenuDropdown.classList.toggle("open");
+                mobileMenuButton.setAttribute("aria-expanded", isOpen);
+
+                if (window.innerWidth >= 768) {
+                    mobileMenuDropdown.classList.remove("open");
+                }
+            }
+
+            function updateActiveLinks() {
+                const currentPath = window.location.pathname;
+                document.querySelectorAll(".nav-link").forEach(link => {
+                    const linkPath = new URL(link.href, window.location.origin).pathname;
+                    if (currentPath === linkPath) {
+                        link.classList.add("active-link");
+                    } else {
+                        link.classList.remove("active-link");
+                    }
+                });
+            }
+
+            // Attach event listeners
+            window.addEventListener("scroll", handleScroll);
+            mobileMenuButton.addEventListener("click", toggleMobileMenu);
+            window.addEventListener("resize", () => mobileMenuDropdown.classList.remove("open"));
+            updateActiveLinks();
+        });
+    </script>
+
+</body>
+</html>
+
+
+<main class="flex-grow max-w-4xl mx-auto p-4 sm:p-6 w-full">
+    
+<div class="post-wrapper">
+   <a href="/blog" class="back-link">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+       stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 18l-6-6 6-6"/>
+  </svg>
+  Back to Blog
+    </a>
+
+
+    <h1 class="text-3xl font-bold">Start With Why</h1>
+    <div class="meta">
+        <span>March 21, 2025</span>
+        <span>•</span>
+        <span>2 min read</span>
+    </div>
+
+    <article class="prose lg:prose-xl">
+        <p>Why do you get up in the morning?</p>
+<p>Not in the motivational-poster sense. Not to manifest a beachside cocktail or chase someone else’s idea of freedom. Just — <em>why you, today?</em></p>
+<p>You don’t need perfect planning. You don’t need the right tools, the right timing, or even the right mood. But you do need a reason. A strong one. A real one. Otherwise, the rest crumbles on contact.</p>
+<p>Intention works like an anchor. It keeps the rest of your actions from drifting into noise. Even when the map is messy, the compass still points somewhere. That somewhere is your why.</p>
+<p>A lot of people try to reverse it. They chase the how first — the method, the strategy, the 5-year plan. But the how is malleable. It bends, breaks, rebuilds. The why is the part you protect.</p>
+<p>So, who are you trying to become?</p>
+<p>Not an imagined self, lounging forever in reward. But someone with a direction. Someone who knows what step, today, makes you one inch closer. That’s the quiet work: noticing what matters, and moving towards it.</p>
+<p>It doesn’t need to be grand. Sometimes it’s a phone call you don’t avoid. Sometimes it’s sitting down to think when you could scroll. Simple acts. But aligned ones.</p>
+<p>Nietzsche said: <em>He who has a why to live can bear almost any how</em>. He wasn’t exaggerating. Viktor Frankl echoed the same — that everything can be taken from you except how you respond. That’s the final freedom. And it’s not small.</p>
+<p>The path might get hard. It might demand more than you thought you had. You might lose people. Or whole parts of yourself. But that isn’t the signal to stop. That’s just the tax for choosing something meaningful.</p>
+<p>And if the dawn doesn’t follow the dark?</p>
+<p>You still walked your path. You still didn’t trade your why for comfort.</p>
+<p>On the tomb of Malcolm McLaren in Highgate Cemetery, the words are etched: <em>Better a spectacular failure than a benign success</em>.</p>
+<p><strong>Seems right.</strong></p>
+
+    </article>
+
+    
+        <div class="tags">
+            
+                <a href="/tags/Purpose" class="tag">Purpose</a>
+            
+                <a href="/tags/Direction" class="tag">Direction</a>
+            
+                <a href="/tags/Mindset" class="tag">Mindset</a>
+            
+                <a href="/tags/Meaning" class="tag">Meaning</a>
+            
+                <a href="/tags/Philosophy" class="tag">Philosophy</a>
+            
+        </div>
+    
+</div>
+</main>
+    <script>
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu-dropdown');
+
+  menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+<footer class="bg-gray-100 text-gray-800 text-sm py-4 w-full border-t border-gray-300">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center text-center sm:text-left px-6 space-y-2 sm:space-y-0 sm:gap-8">
+        <p>© 2025 Tymur Buiadzhi | Built with 
+            <a href="https://www.11ty.dev/" class="text-blue-600 hover:text-blue-800 transition duration-200 underline">Eleventy</a>
+        </p>
+        <a href="/feed.xml" class="flex items-center space-x-2 text-gray-700 hover:text-gray-900 transition duration-200">
+            <i class="fa-solid fa-rss text-orange-500 text-lg"></i>
+            <span>RSS Feed</span>
+        </a>
+    </div>
+</footer>
+
+</body>
+</html>
+
